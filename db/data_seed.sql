@@ -19,7 +19,8 @@ CREATE TABLE item (
   item_name VARCHAR(50),
   description VARCHAR(200),
   quantity INTEGER,
-  price INTEGER
+  price INTEGER,
+  date TEXT
 );
 
 CREATE TABLE products (
