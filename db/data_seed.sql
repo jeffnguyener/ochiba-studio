@@ -1,5 +1,5 @@
 CREATE TABLE users {
-  user_id int SERIAL PRIMARY KEY,
+  user_id INTEGER SERIAL PRIMARY KEY,
   first_name VARCHAR(50),
   last_name VARCHAR(50),
   phone INTEGER,
