@@ -18,8 +18,13 @@ app.use(session({
     }
 }))
 
+app.post('/auth/register', auth_ctrl.register)
+
+
+
+
 massive(CONNECTION_STRING).then((database) => {
     app.set('db', database)
-    console.log('Database is running 👌')
+    console.log('Database is running 👌', database.listTables())
     app.listen(SERVER_PORT, () => console.log(`Speeding through port ${SERVER_PORT}`))
 })
