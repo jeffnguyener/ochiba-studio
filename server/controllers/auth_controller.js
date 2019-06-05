@@ -32,9 +32,15 @@ module.exports = {
         const { session } = req
         if (session.user) {
             const profileDetails = await db.get_userProfile_details({id: session.user.id})
-            const { first_name, last_name, email, user_id, phone, avatar, } = profileDetails[0]
+            const { first_name, last_name, email, user_id, phone, avatar } = profileDetails[0]
             return res.status(200).send({first_name, last_name, email, user_id, phone, avatar, })
         }
         return res.status(401).send('Please Log In')
+    },
+    getUserMessages: async (req, res) => {
+        const db = req.app.get('db')
+        const { session } = req
+        const result = await db.get_user_messages({id: session.user.id})
+        return res.status(200).send(result)
     }
 }

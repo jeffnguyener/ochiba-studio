@@ -21,6 +21,7 @@ app.use(session({
 app.post('/auth/register', auth_ctrl.register)
 app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/userdetails', auth_ctrl.getUserDetails)
+app.get('/auth/messages', auth_ctrl.getUserMessages)
 
 
 
