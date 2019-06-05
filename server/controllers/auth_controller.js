@@ -42,5 +42,6 @@ module.exports = {
         const { session } = req
         const result = await db.get_user_messages({id: session.user.id})
         return res.status(200).send(result)
-    }
+    },
+    
 }
