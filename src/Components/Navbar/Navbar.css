@@ -12,9 +12,18 @@
 a, a:visited {
     color: white;
     text-decoration: none;
-    padding: 25px
+    padding: 20px;
+    font-size: 24px;
 }
 
 a:hover {
-    color: limegreen;
+    color: lawngreen;
+}
+
+nav div img {
+    width: 200px;
+    height: 185px;
+    left: 150px;
+    top: 5px;
+    position: relative;
 }

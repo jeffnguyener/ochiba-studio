@@ -48,12 +48,12 @@ class Login extends Component {
                     <input
                         type='text'
                         name='email'
-                        placeholder='email'
+                        placeholder='EMAIL'
                         onChange={this.handleLoginInfoUpdate} />
                     <input
-                        type='text'
+                        type='password'
                         name='password'
-                        placeholder='password'
+                        placeholder='PASSWORD'
                         onChange={this.handleLoginInfoUpdate} />
                     <button>Log In</button>
                 </form>

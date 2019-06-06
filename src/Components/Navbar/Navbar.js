@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import OSlogo from './images/o-s-color.png'
 import './Navbar.css'
 
 const Navbar = ({ email }) => {
     return (
         <nav className="navbar">
             <div>
-            LOGO
+            <img src={OSlogo}></img>
             </div>
             <div className="links">
             <Link to='/'>Home</Link>
