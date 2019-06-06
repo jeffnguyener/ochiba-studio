@@ -7,6 +7,10 @@ const Navbar = ({ email }) => {
         <nav>
             <Link to='/'>Home</Link>
             <Link to='/login'>Login</Link>
+            <Link to='/aboutus'>About Us</Link>
+            <Link to='/portfolio'>Portfolio</Link>
+            <Link to='/pricing'>Pricing</Link>
+            <Link to='/blog'>Blog</Link>
         </nav>
     )
 }
