@@ -6,14 +6,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
 }
- 
+
 a, a:visited {
     color: white;
     text-decoration: none;
-    padding: 20px;
-    font-size: 24px;
+    padding: 15px;
+    font-size: 20px;
+    text-transform: uppercase;
+    
 }
 
 a:hover {
