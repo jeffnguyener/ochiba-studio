@@ -40,7 +40,7 @@ class Login extends Component {
         e.target.password.value = ''
     }
 
-    rendor() {
+    render() {
         return (
             <div>
                 <h1>Login</h1>
