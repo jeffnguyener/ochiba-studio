@@ -15,6 +15,7 @@ module.exports = {
     },
     login: async (req, res) => {
         const { email, password } = req.body
+        console.log(email, password)
         const db = req.app.get('db')
         const { session } = req
         const userFound = await db.check_user_email({ email })
