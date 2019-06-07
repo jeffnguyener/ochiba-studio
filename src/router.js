@@ -7,6 +7,7 @@ import Portfolio from './Components/Portfolio/Portfolio'
 import Pricing from './Components/Pricing/Pricing'
 import Blog from './Components/Blog/Blog'
 import Cart from '../src/Components/Shopping/Shopping'
+import Details from './Components/Details'
 
 
 export default (
@@ -17,6 +18,7 @@ export default (
         <Route path='/portfolio' component={Portfolio} />
         <Route path='/pricing' component={Pricing} />
         <Route path='/blog' component={Blog} />
+        <Route path='/details' component={Details} />
         <Route path='/cart' component={Cart} />
     </Switch>
 )

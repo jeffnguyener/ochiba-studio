@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { updateUser, clearUser } from '../redux/store'
+import { updateUser, clearUser } from '../redux/userReducer'
 import { connect } from 'react-redux'
 
 class Details extends Component {
