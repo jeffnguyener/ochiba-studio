@@ -47,8 +47,9 @@ class Navbar extends Component {
                 {/* login/register drop down */}
                 {
                     this.state.showLoginDropdown ?
-                        <div className="login">
+                        <div className="sidebar">
                             <Link to='/login'>Login/Register</Link>
+                            <Link to='/cart'>Shopping Cart</Link>
                         </div>
                         :
                         null

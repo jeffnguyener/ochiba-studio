@@ -2,6 +2,22 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { updateUser } from '.../../../src/redux/userReducer'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
+
+import './Login.css'
+
+const Button = styled.button`
+    font-family: sans-serif;
+    font-size: 16px;
+    border: none;
+    padding: 3px 8px;
+    background: lightgray;
+    color: white;
+    &:hover {
+        background: black;
+        cursor: pointer;
+    }
+`
 
 class Login extends Component {
     constructor() {
@@ -42,7 +58,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div className="login-form">
                 <h1>Login</h1>
                 <form onSubmit={this.handleUserLogin}>
                     <input
@@ -55,7 +71,7 @@ class Login extends Component {
                         name='password'
                         placeholder='PASSWORD'
                         onChange={this.handleLoginInfoUpdate} />
-                    <button>Log In</button>
+                    <Button>Log In</Button>
                 </form>
 
             </div>

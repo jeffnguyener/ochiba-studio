@@ -113,14 +113,14 @@ nav div img {
     color: white;
 }
 
-.login {
+.sidebar {
     position: absolute;
     right: 0;
     top: 80px;
     
 }
 
-.login > a {
+.sidebar > a {
     color: gray;
     font-size: 15px;
     height: 12px;
@@ -130,9 +130,12 @@ nav div img {
     justify-content: center;
     align-items: center;
     border: 1px solid lightgray;
+    box-shadow: 1px 1px 5px 2px rgba(35, 35, 35, 0.3);
+    animation: slidedown 200ms;
 }
 
-.login > a:hover {
+.sidebar > a:hover {
     background: black;
     color: lawngreen;
 }
+
