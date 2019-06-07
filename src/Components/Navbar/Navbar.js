@@ -20,8 +20,10 @@ class Navbar extends Component {
     }
 
     toggleLoginDropdown = () => {
-        this.setState({ showLoginDropdown: 
-        !this.state.showLoginDropdown})
+        this.setState({
+            showLoginDropdown:
+                !this.state.showLoginDropdown
+        })
     }
 
     render() {
@@ -36,18 +38,20 @@ class Navbar extends Component {
                     <span onClick={this.toggleDropdown}>Portfolio</span>
                     <Link to='/pricing'>Pricing</Link>
                     <Link to='/blog'>Blog</Link>
-                    <Icon.ShoppingCart size={28} className="icon"/>
+                    <Link to="/cart">
+                    <Icon.ShoppingCart size={28} className="cart" />
+                    </Link>
                     <Icon.Menu size={30} className="hamburger" onClick={this.toggleLoginDropdown} />
-                    
+
                 </div>
                 {/* login/register drop down */}
                 {
-                this.state.showLoginDropdown ? 
-                <div className="login">
-                    <Link to='/login'>Login/Register</Link>
-                </div>
-                :
-                null
+                    this.state.showLoginDropdown ?
+                        <div className="login">
+                            <Link to='/login'>Login/Register</Link>
+                        </div>
+                        :
+                        null
                 }
 
                 {/* products drop down */}

@@ -41,6 +41,10 @@ span {
     text-transform: uppercase;
 }
 
+nav div span:hover {
+    color: lawngreen;
+}
+
 nav div img {
     width: 200px;
     height: 185px;
@@ -69,8 +73,9 @@ nav div img {
     align-items: center;
     top: 80px;
     right: 280px;
-    box-shadow: 1px 1px 5px 2px rgba(25, 25, 25, 0.3);
+    box-shadow: 1px 1px 5px 2px rgba(35, 35, 35, 0.3);
     animation: slidedown 100ms;
+    /* border: 1px solid lightgray; */
 }
 
 @keyframes slidedown {
@@ -91,12 +96,17 @@ nav div img {
     }
 }
 
-.icon {
+.cart {
     color: white;
+}
+
+.cart:hover {
+    color: lawngreen;
 }
 
 .hamburger:hover {
     cursor: pointer;
+    color: lawngreen;
 }
 
 .hamburger {
