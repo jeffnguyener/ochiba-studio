@@ -2,13 +2,15 @@ require('dotenv').config()
 const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
+const cors = require('cors')
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
 const app = express()
 
 const auth_ctrl = require('./controllers/auth_controller')
+const shop_ctrl = require('./controllers/shopping_controller')
 
+app.use(cors())
 app.use(express.json())
-
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,
@@ -22,6 +24,8 @@ app.post('/auth/register', auth_ctrl.register)
 app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/userdetails', auth_ctrl.getUserDetails)
 app.get('/auth/messages', auth_ctrl.getUserMessages)
+
+app.get('/shopping/items', shop_ctrl.getItems)
 
 
 

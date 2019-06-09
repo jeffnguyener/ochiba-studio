@@ -13,6 +13,7 @@ const Button = styled.button`
     padding: 3px 8px;
     background: lightgray;
     color: white;
+
     &:hover {
         background: black;
         cursor: pointer;
@@ -59,18 +60,26 @@ class Login extends Component {
     render() {
         return (
             <div className="login-form">
-                <h1>Login</h1>
+                <h1 className="login">Login</h1>
                 <form onSubmit={this.handleUserLogin}>
+                    <label className="email-input" htmlFor="email">
+                        Email
+                </label>
+                <br></br>
                     <input
                         type='text'
-                        name='email'
-                        placeholder='EMAIL'
+                        id='email'
                         onChange={this.handleLoginInfoUpdate} />
+                    <br></br>
+                    <label className="password-input" htmlFor="password">
+                        Password
+                </label>
+                <br></br>
                     <input
                         type='password'
-                        name='password'
-                        placeholder='PASSWORD'
+                        id='password'
                         onChange={this.handleLoginInfoUpdate} />
+                 <br></br><br></br>
                     <Button>Log In</Button>
                 </form>
 

@@ -1,16 +1,27 @@
-.login-form {
-    justify-content: center;
-    align-items: center;
+.login {
+    font-family: sans-serif;
 }
-div form {
+
+.login-form {
     width: 80%;
-    height: 50vh;
+    height: 60vh;
+    margin-top: 5%;
+    margin-left: 10%;
     border: 2px solid lightgray;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-div form input {
-    margin-top: 30px;
+label.email-input {
+    display: flex;
+    justify-content: center;
 }
+
+label.password-input {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+

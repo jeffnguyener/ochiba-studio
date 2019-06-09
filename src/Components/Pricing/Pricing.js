@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { addToCart } from '../../redux/shoppingReducer';
 
 class Pricing extends Component {
     state = {
@@ -23,7 +25,7 @@ class Pricing extends Component {
                    <h1>Package: {product.product_name}</h1>
                    <h5>Description: {product.product_description} </h5>
                    <h5>Price: {product.price}</h5>
-                   <button onClick={() => this.handleAddItem(product.product_id)}>Add To Cart</button>
+                   <button onClick={() => this.props.addToCart(product)}>Add To Cart</button>
                </div>
            )
        })
@@ -36,4 +38,4 @@ class Pricing extends Component {
     }
 }
 
-export default Pricing;
+export default connect(null, {addToCart})(Pricing);
