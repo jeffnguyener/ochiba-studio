@@ -1,0 +1,5 @@
+-Style components for login 
+-Messages when logged in
+-Aligning dropdown with portfolio
+-Shopping Cart
+-AWS S3 for unploading avatar
