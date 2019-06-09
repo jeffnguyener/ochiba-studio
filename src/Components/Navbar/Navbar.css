@@ -24,7 +24,7 @@
 a, a:visited {
     color: white;
     text-decoration: none;
-    padding: 15px;
+    padding: 12px;
     font-size: 20px;
     text-transform: uppercase;
     
@@ -62,39 +62,66 @@ nav div img {
     justify-content: space-around;
 }
 
+.p-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
 .port-dropdown {
     position: absolute;
-    width: 15%;
     height: auto;
-    background: black;
+    background: #ebebeb;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    top: 80px;
-    right: 280px;
-    box-shadow: 1px 1px 5px 2px rgba(35, 35, 35, 0.3);
-    animation: slidedown 100ms;
-    /* border: 1px solid lightgray; */
+    top: 51px;
+    right: -21px;
+    box-shadow: 1px 1px 3px 2px rgba(25, 25, 25, 0.3);
+    animation: fadeIn 200ms;
+}
+
+.port-dropdown > a {
+    color: #525252;
+    width: 150px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+}
+
+.port-dropdown > a:hover {
+    color: lawngreen;
+    cursor: pointer;
+    background: black;
+}
+
+.divider {
+    width: 100%;
+    border-bottom: 1px solid lightgray;
 }
 
 @keyframes slidedown {
-    0% {
-        height: 0vh;
-    }
-    25% {
-        height: 2vh;
-    }
-    50% {
-        height: 3vh;
-    }
-    75% {
-        height: 4vh;
-    }
-    100% {
-        height: 5vh;
-    }
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+      }
+    
+      to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
 }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
 
 .cart {
     color: white;
@@ -121,7 +148,8 @@ nav div img {
 }
 
 .sidebar > a {
-    color: gray;
+    color: #525252;
+    background: #ebebeb;
     font-size: 15px;
     height: 12px;
     width: 120px;
@@ -130,7 +158,7 @@ nav div img {
     justify-content: center;
     align-items: center;
     border: 1px solid lightgray;
-    box-shadow: 1px 1px 5px 2px rgba(35, 35, 35, 0.3);
+    box-shadow: 1px 1px 3px 1px rgba(25, 25, 25, 0.3);
     animation: slidedown 200ms;
 }
 
