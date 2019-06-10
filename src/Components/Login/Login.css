@@ -25,3 +25,11 @@ label.password-input {
     justify-content: center;
 }
 
+.register-link a {
+    color: #707070;
+    font-size: 10px;
+}
+
+.register-link {
+    padding: 20px
+}

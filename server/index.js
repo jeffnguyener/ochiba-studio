@@ -32,7 +32,6 @@ app.post('/getSignedUrl', s3_ctrl.getSignedURL)
   
 
 
-
 massive(CONNECTION_STRING).then((database) => {
     app.set('db', database)
     console.log('Database is running 👌', database.listTables())

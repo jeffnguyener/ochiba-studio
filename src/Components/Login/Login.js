@@ -3,7 +3,7 @@ import axios from 'axios'
 import { updateUser } from '.../../../src/redux/userReducer'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom'
 import './Login.css'
 
 const Button = styled.button`
@@ -39,13 +39,14 @@ class Login extends Component {
 
     handleLoginInfoUpdate = (e) => {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.id]: e.target.value
         })
     }
 
     handleUserLogin = (e) => {
         e.preventDefault()
         const { email, password } = this.state
+        console.log(email, password)
         axios.post('/auth/login', { email, password })
             .then((res) => {
                 this.props.history.push('/details')
@@ -82,6 +83,9 @@ class Login extends Component {
                  <br></br><br></br>
                     <Button>Log In</Button>
                 </form>
+                <div className="register-link">
+                    <Link to="/register">Not Registered?</Link>
+                </div>
             </div>
         )
     }
