@@ -1,0 +1,13 @@
+.about-form {
+    width: 80%;
+    height: 70vh;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    text-transform: uppercase;
+    text-align: center;
+  }

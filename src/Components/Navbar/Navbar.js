@@ -39,13 +39,13 @@ class Navbar extends Component {
             {this.state.showDropdown ? (
               <div className="port-dropdown">
                <div className="divider"/>
-                <Link to="#">Wedding</Link>
+                <Link to="/wedding" onClick={this.toggleDropdown}>Wedding</Link>
                 <div className="divider"/>
-                <Link to="#">Engagement</Link>
+                <Link to="/engagement" onClick={this.toggleDropdown}>Engagement</Link>
                 <div className="divider"/>
-                <Link to="#">Portraits</Link>
+                <Link to="/portraits" onClick={this.toggleDropdown}>Portraits</Link>
                 <div className="divider"/>
-                <Link to="#">Maternity</Link>
+                <Link to="/maternity" onClick={this.toggleDropdown}>Maternity</Link>
               </div>
             ) : null}
           </span>
@@ -63,8 +63,8 @@ class Navbar extends Component {
         {/* login/register drop down */}
         {this.state.showLoginDropdown ? (
           <div className="sidebar">
-            <Link to="/login">Login/Register</Link>
-            <Link to="/cart">Shopping Cart</Link>
+            <Link to="/login" onClick={this.toggleLoginDropdown}>Login/Register</Link>
+            <Link to="/cart" onClick={this.toggleLoginDropdown}>Shopping Cart</Link>
           </div>
         ) : null}
 

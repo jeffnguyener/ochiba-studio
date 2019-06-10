@@ -1,5 +1,10 @@
 import React from 'react'
 
-const AboutUs = () =>  <h1>About Us</h1>
+import './AboutUs.css'
+
+const AboutUs = () =>  
+<div className="about-form">
+<h1>About Us</h1>
+</div>
 
 export default AboutUs;
