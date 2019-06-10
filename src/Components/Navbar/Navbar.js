@@ -29,7 +29,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <div>
-          <img src={oslogo} />
+          <img alt='logo' src={oslogo} />
         </div>
         <div className="links">
           <Link to="/">Home</Link>

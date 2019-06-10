@@ -1,10 +1,12 @@
 import React from 'react'
 import CarouselHome from './Carousel'
 
+import './Home.css'
+
 const Home = () => 
-<h1>Home
+<div className="home-content">
 <CarouselHome />
-</h1>
+</div>
 
 
 export default Home;
