@@ -82,7 +82,6 @@ class Login extends Component {
                  <br></br><br></br>
                     <Button>Log In</Button>
                 </form>
-
             </div>
         )
     }

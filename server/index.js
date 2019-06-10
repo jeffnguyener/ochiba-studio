@@ -8,6 +8,7 @@ const app = express()
 
 const auth_ctrl = require('./controllers/auth_controller')
 const shop_ctrl = require('./controllers/shopping_controller')
+const s3_ctrl = require('./controllers/s3_controller')
 
 app.use(cors())
 app.use(express.json())
@@ -26,6 +27,8 @@ app.get('/auth/userdetails', auth_ctrl.getUserDetails)
 app.get('/auth/messages', auth_ctrl.getUserMessages)
 
 app.get('/shopping/items', shop_ctrl.getItems)
+
+app.post('/getSignedUrl', s3_ctrl.getSignedURL)
 
 
 
