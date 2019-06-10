@@ -1,0 +1,35 @@
+.register-form {
+  width: 80%;
+  height: 70vh;
+  margin-top: 5%;
+  margin-left: 10%;
+  border: 2px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+div h1 {
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+label {
+    font-size: 14px;
+}
+
+input {
+    margin-top: 5px;
+}
+
+.login-link a {
+  color: #525252;
+  font-size: 10px;
+}
+
+.login-link {
+  padding: 20px
+}

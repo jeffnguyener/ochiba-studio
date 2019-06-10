@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 
-
-export default class Register extends Component {
+export default class Portraits extends Component {
     render() {
         return (
             <div>
-                Register
+                Portraits
             </div>
         )
     }
