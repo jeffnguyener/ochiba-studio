@@ -29,7 +29,7 @@ app.get('/auth/messages', auth_ctrl.getUserMessages)
 app.get('/shopping/items', shop_ctrl.getItems)
 
 app.post('/getSignedUrl', s3_ctrl.getSignedURL)
-
+  
 
 
 

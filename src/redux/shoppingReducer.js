@@ -4,6 +4,7 @@ const initialState = {
 
 const ADD_TO_CART = "ADD_TO_CART";
 const GET_SAVED_ITEMS = "GET_SAVED_ITEMS";
+const CLEAR_CART = 'CLEAR_CART';
 
 // Action that add the product into the cart
 export function addToCart(product) {
@@ -20,6 +21,12 @@ export function getSavedItem(savedItems){
     }
 }
 
+export function clearCart(){
+    return {
+        return: CLEAR_CART
+    }
+}
+
 export default function shoppingReducer(state = initialState, action) {
   // write a case to add the product to the cart
   switch (action.type) {
@@ -30,7 +37,9 @@ export default function shoppingReducer(state = initialState, action) {
       return { ...state, cart: newCartArr };
     // return {...state, cart: [...state.cart, action.payload]}
     case GET_SAVED_ITEMS: 
-        return {...state, cart: action.payload}
+        return {...state, cart: action.payload};
+    case CLEAR_CART:
+        return { ...initialState};
     default:
       return state;
   }
