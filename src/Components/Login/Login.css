@@ -15,14 +15,17 @@
 }
 
 label.email-input {
+    margin-top: 35px;
     display: flex;
     justify-content: center;
+    font-size: 14px;
 }
 
 label.password-input {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    font-size: 14px;
 }
 
 .register-link a {

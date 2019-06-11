@@ -67,16 +67,14 @@ class Login extends Component {
                     <label className="email-input" htmlFor="email">
                         Email
                 </label>
-                <br></br>
                     <input
                         type='text'
                         id='email'
                         onChange={this.handleLoginInfoUpdate} />
-                    <br></br>
                     <label className="password-input" htmlFor="password">
                         Password
                 </label>
-                <br></br>
+                {/* <br /> */}
                     <input
                         type='password'
                         id='password'
