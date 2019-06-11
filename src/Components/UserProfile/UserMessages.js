@@ -23,7 +23,9 @@ class UserMessages extends Component {
                 <h1>Messages</h1>
                 <br />
                 <div className="menu">
+                    <div className="message-box">
                    {this.props.messages}
+                   </div>
                 <Link to="/details">Back</Link>
                 </div>
             </div>

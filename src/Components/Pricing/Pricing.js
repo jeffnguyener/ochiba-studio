@@ -41,7 +41,7 @@ class Pricing extends Component {
       return (
         <div key={product.product_id}>
           <h1>Package: {product.product_name}</h1>
-          <h5>Description: {product.product_description} </h5>
+          <div className="description">Description:</div> {product.product_description} 
           <h4>Price: ${product.price}</h4>
           <Button onClick={() => this.props.addToCart(product)}>
             Add To Cart

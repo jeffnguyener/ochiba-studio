@@ -1,6 +1,6 @@
 .user-form {
     width: 80%;
-    height: 60vh;
+    height: 70vh;
     margin-top: 5%;
     margin-left: 10%;
     border: 2px solid lightgray;
@@ -19,4 +19,11 @@
 .menu a {
     color: #525252;
     font-size: 14px;
+}
+
+.user-form > .menu > .message-box {
+    width: 40vw;
+    height: 40vh;
+    border: 1px solid lightgray
+
 }

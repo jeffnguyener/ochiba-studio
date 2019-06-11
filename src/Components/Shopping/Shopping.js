@@ -30,7 +30,7 @@ class Shopping extends Component {
       return (
           <div key={product.product_id}>
             <h2>Package: {product.product_name}</h2>
-            <h5>Description:</h5> {product.product_description} 
+            <div className="description">Description:</div> {product.product_description} 
             <h4>Price: ${product.price}</h4>
             <Button onClick={this.handleClearCart}>Remove</Button>
             <span>
