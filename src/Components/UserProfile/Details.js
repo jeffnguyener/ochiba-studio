@@ -44,7 +44,7 @@ class Details extends Component {
   render() {
     return (
       <div className="user-form">
-        <h1>User Profile</h1>
+        <h1>My Profile</h1>
             <div className="menu">
             <div>Welcome {this.props.first_name}!</div>
             <br />

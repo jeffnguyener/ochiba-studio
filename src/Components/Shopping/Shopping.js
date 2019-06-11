@@ -19,9 +19,8 @@ const Button = styled.button`
   }
 `;
 
-// handleClearCart = (id) => {
-//     const { id } = this.props.cart
-//     this.props.handleClearCart
+// handleClearCart = () => {
+    
 // }
 
 class Shopping extends Component {
