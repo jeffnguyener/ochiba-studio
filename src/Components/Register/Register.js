@@ -28,68 +28,73 @@ class Register extends Component {
       last_name: "",
       phone: "",
       email: "",
-      password: ""
+      pw: ""
     };
   }
 
   handleRegisterInfo = (e) => {
-      this.setState({
-          [e.target.id]: e.target.value
-      })
-  }
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
 
-  handleRegisteredUser = e => {
+  handleRegisteredUser = (e) => {
     e.preventDefault();
     const { first_name, last_name, phone, email, password } = this.state;
     console.log(first_name, last_name, phone, email, password);
     axios
-      .post("/auth/register", { first_name, last_name, phone, email, password })
+      .post('/auth/register', { first_name, last_name, phone, email, password })
       .then(res => {
         this.props.history.push("/details");
       })
       .catch(err => {
         console.log(err);
       });
-    e.target.first_name.value = '';
-    e.target.last_name.value = '';
-    e.target.phone.value = '';
-    e.target.email.value = '';
-    e.target.password.value = '';
+    e.target.first_name.value = " ";
+    e.target.last_name.value = " ";
+    e.target.phone.value = " ";
+    e.target.email.value = " ";
+    e.target.pw.value = " ";
   };
 
   render() {
     return (
       <div className="register-form">
         <h1 className="register">Register</h1>
-        <form>
+        <form onSubmit={this.handleRegisteredUser}>
           <label className="first-input" htmlFor="first_name">
             First Name
           </label>
           <br />
-          <input type="text" id="first_name" onChange={this.state} />
+          <input type="text" id="first_name" onChange={this.handleRegisterInfo} />
+
           <br />
           <label className="last-input" htmlFor="last_name">
             Last Name
           </label>
           <br />
-          <input type="text" id="last_name" onChange={this.state} />
+          <input type="text" id="last_name" onChange={this.handleRegisterInfo} />
+
           <br />
           <label className="contact-input" htmlFor="contact">
             Contact Number
           </label>
           <br />
-          <input type="text" id="contact_number" onChange={this.state} />
+          <input type="text" id="phone" onChange={this.handleRegisterInfo} />
+
           <br />
           <label className="email-input" htmlFor="email">
             Email
           </label>
-          <input type="text" id="email" onChange={this.state} />
+          <input type="text" id="email" onChange={this.handleRegisterInfo} />
+
           <br />
           <label className="password-input2" htmlFor="reg-password">
             Password
           </label>
           <br />
-          <input type="password" id="reg-password" onChange={this.state} />
+          <input type="password" id="pw" onChange={this.handleRegisterInfo} />
+
           <br />
           <br />
           <Button>Cancel</Button>
@@ -97,7 +102,7 @@ class Register extends Component {
           <Button>Register</Button>
         </form>
         <div className="login-link">
-        <Link to="/login">Already Registered?</Link>
+          <Link to="/login">Already Registered?</Link>
         </div>
       </div>
     );

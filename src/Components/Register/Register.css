@@ -18,11 +18,13 @@ div h1 {
 }
 
 label {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 input {
     margin-top: 5px;
+    width: 185px;
+    border-radius: 1px;
 }
 
 .login-link a {

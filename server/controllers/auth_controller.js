@@ -44,5 +44,10 @@ module.exports = {
         const result = await db.get_user_messages({id: session.user.id})
         return res.status(200).send(result)
     },
-    
+    logout: (req, res) => {
+        // console.log(req.session)
+        req.session.destroy()
+        return res.status(200).send("logout")
+    }
+
 }

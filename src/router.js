@@ -11,9 +11,10 @@ import Blog from './Components/Blog/Blog'
 //USER ROUTES
 import Login from './Components/Login/Login'
 import Cart from '../src/Components/Shopping/Shopping'
-import Details from './Components/Details'
+import Details from './Components/UserProfile/Details'
 import UserProfile from './Components/UserProfile/UserProfile'
 import Register from './Components/Register/Register'
+import UserMessages from './Components/UserProfile/UserMessages'
 
 //PORTFOLIO ROUTES
 import Wedding from './Components/Portfolio/Wedding'
@@ -34,6 +35,7 @@ export default (
         <Route path='/cart' component={Cart} />
         <Route path='/profile' component={UserProfile} />
         <Route path='/register' component={Register} />
+        <Route path='/messages' component={UserMessages} />
 
         <Route path='/wedding' component={Wedding} />
         <Route path='/engagement' component={Engagement} />
