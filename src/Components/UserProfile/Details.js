@@ -46,9 +46,11 @@ class Details extends Component {
       <div className="user-form">
         <h1>User Profile</h1>
             <div className="menu">
-            {this.props.first_name}
+            <div>Welcome {this.props.first_name}!</div>
+            <br />
+            <br />
             <Link to='/profile'>Update Profile</Link>
-            <Link to='/message'>My Messages</Link>
+            <Link to='/messages'>My Messages</Link>
             </div>
             <br />
         <Button onClick={this.handUserLogout}>Logout</Button>
@@ -56,9 +58,10 @@ class Details extends Component {
     );
   }
 }
+console.log(Link)
 
 function mapStateToProps(reduxState) {
-    console.log(reduxState)
+    // console.log(reduxState)
   return {
     first_name: reduxState.userReducer.first_name
   };

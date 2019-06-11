@@ -46,7 +46,7 @@ class Login extends Component {
     handleUserLogin = (e) => {
         e.preventDefault()
         const { email, password } = this.state
-        console.log(email, password)
+        // console.log(email, password)
         axios.post('/auth/login', { email, password })
             .then((res) => {
                 this.props.history.push('/details')
@@ -74,7 +74,6 @@ class Login extends Component {
                     <label className="password-input" htmlFor="password">
                         Password
                 </label>
-                {/* <br /> */}
                     <input
                         type='password'
                         id='password'

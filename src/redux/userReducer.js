@@ -1,10 +1,12 @@
 const initialState = {
     first_name: ' ',
-    message: ' ',
+    messages: ' ',
+    date: ''
 }
 
 const UPDATE_USER = 'UPDATE_USER'
 const CLEAR_USER = 'CLEAR_USER'
+const UPDATE_MSG = 'UPDATE_MSG'
 
 export function updateUser(user){
     return {
@@ -19,13 +21,23 @@ export function clearUser(){
     }
 }
 
+export function updateMessage(messageObj){
+    return {
+        type: UPDATE_MSG,
+        payload: messageObj
+    }
+}
+
 function reducer(state = initialState, action){
     switch(action.type){
         case UPDATE_USER:
-            const { first_name, message } = action.payload
-            return { ...state, first_name, message }
+            const { first_name } = action.payload
+            return { ...state, first_name }
         case CLEAR_USER:
             return { ...initialState }
+        case UPDATE_MSG:
+            const { body_msg, date } = action.payload
+            return { ...state, messages: body_msg, date }
         default:
             return state
     }
