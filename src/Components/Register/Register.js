@@ -33,6 +33,9 @@ class Register extends Component {
   }
 
   handleRegisterInfo = (e) => {
+      console.log(e.target.value)
+      console.log(e.target)
+      console.log(this.state.pw)
     this.setState({
       [e.target.id]: e.target.value
     });
@@ -40,10 +43,10 @@ class Register extends Component {
 
   handleRegisteredUser = (e) => {
     e.preventDefault();
-    const { first_name, last_name, phone, email, password } = this.state;
-    console.log(first_name, last_name, phone, email, password);
+    const { first_name, last_name, phone, email, pw } = this.state;
+    console.log(first_name, last_name, phone, email, pw);
     axios
-      .post('/auth/register', { first_name, last_name, phone, email, password })
+      .post('/auth/register', { first_name, last_name, phone, email, password: pw })
       .then(res => {
         this.props.history.push("/details");
       })
@@ -99,7 +102,7 @@ class Register extends Component {
           <br />
           <Button>Cancel</Button>
           <span> </span>
-          <Button>Register</Button>
+          <Button type='submit'>Register</Button>
         </form>
         <div className="login-link">
           <Link to="/login">Already Registered?</Link>

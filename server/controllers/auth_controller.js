@@ -21,6 +21,7 @@ module.exports = {
         const userFound = await db.check_user_email({ email })
         if (!userFound[0]) return res.status(401).send('Email does not exist')
         const authenticated = bcrypt.compareSync(password, userFound[0].password)
+        console.log(authenticated)
         if (authenticated) {
             session.user = { id: userFound[0].user_id, email: userFound[0].email }
             res.status(200).send(session.user)

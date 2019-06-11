@@ -33,7 +33,7 @@ class Login extends Component {
         axios.get('/auth/login').then((res) => {
             // console.log(res.data)
             this.props.updateUser(res.data)
-            this.props.history.push('/details')
+            this.props.history.push('/userdetails')
         })
     }
 
@@ -53,6 +53,7 @@ class Login extends Component {
             })
             .catch((err) => {
                 console.log(err)
+                console.log(err.response.data)
             })
         e.target.email.value = ''
         e.target.password.value = ''
