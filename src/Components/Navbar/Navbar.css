@@ -48,9 +48,11 @@ nav div span:hover {
 nav div img {
     width: 200px;
     height: 185px;
-    left: 150px;
-    top: 5px;
-    position: relative;
+    margin-left: 180px;
+    margin-top: 10px;
+    /* left: 250px; */
+    /* top: 5px; */
+    /* position: relative; */
 }
 
 .links {
@@ -65,6 +67,10 @@ nav div img {
 .p-dropdown {
     position: relative;
     cursor: pointer;
+}
+
+.p-dropdown:hover{
+    color: lawngreen;
 }
 
 .port-dropdown {
@@ -138,6 +144,7 @@ nav div img {
 
 .hamburger {
     color: white;
+    display: block;
 }
 
 .sidebar {
@@ -167,3 +174,17 @@ nav div img {
     color: lawngreen;
 }
 
+@media only screen and (max-width: 820px){
+    nav div img {
+        margin-left: 35px;
+        margin-top: 10px;
+    }
+    .links {
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+   nav ul .links .cart {
+        display: flex;
+    }
+}

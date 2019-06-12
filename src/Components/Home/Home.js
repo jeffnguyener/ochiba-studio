@@ -4,7 +4,7 @@ import CarouselHome from './Carousel'
 import './Home.css'
 
 const Home = () => 
-<div className="home-content">
+<div className="home-carousel">
 <CarouselHome />
 </div>
 

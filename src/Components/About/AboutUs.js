@@ -1,13 +1,19 @@
 import React from "react";
+import styled from 'styled-components'
 
 import usImg from "../Navbar/images/us-img.jpg";
 import "./AboutUs.css";
+
+const Image = styled.img`
+  width: 35%;
+`;
+
 
 const AboutUs = () => (
   <div className="about-form">
     <h1>About Us</h1>
     <div>
-      <img id="us-img" alt="us-img" src={usImg} />
+      <Image id="us-img" alt="us" src={usImg} />
       <br />
       <br />
       <span className="about-us">

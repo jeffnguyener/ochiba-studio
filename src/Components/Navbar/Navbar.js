@@ -29,9 +29,9 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <div>
-          <img alt='logo' src={oslogo} />
+          <img id='logo' alt='logo' src={oslogo} />
         </div>
-        <div className="links">
+        <ul className="links">
           <Link to="/">Home</Link>
           <Link to="/aboutus">About Us</Link>
           <span className="p-dropdown" onClick={this.toggleDropdown}>
@@ -59,7 +59,7 @@ class Navbar extends Component {
             className="hamburger"
             onClick={this.toggleLoginDropdown}
           />
-        </div>
+        </ul>
         {/* login/register drop down */}
         {this.state.showLoginDropdown ? (
           <div className="sidebar">

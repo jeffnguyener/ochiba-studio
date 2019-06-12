@@ -5,8 +5,8 @@ import { Carousel } from 'react-responsive-carousel';
 class CarouselHome extends Component {
     render() {
         return (
-            <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false}>
-                <div>
+            <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false} dynamicHeight>
+                <div style={{height: "500px"}}>
                     <img alt='Clingmans Dome' src="https://live.staticflickr.com/5322/30204324484_4230b6e984_k.jpg" />
                     <p className="legend">Clingman's Dome</p>
                 </div>
