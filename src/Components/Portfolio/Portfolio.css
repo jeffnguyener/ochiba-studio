@@ -5,3 +5,10 @@ div .box-container {
     margin-left: 10%;
     border: 2px solid lightgray;
 }
+
+div .box-container a {
+    color: #525252;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
