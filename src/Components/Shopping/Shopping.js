@@ -11,10 +11,11 @@ const Button = styled.button`
   border: none;
   padding: 3px 8px;
   background: lightgray;
-  color: white;
+  color: black;
 
   &:hover {
     background: black;
+    color: lightgray;
     cursor: pointer;
   }
 `;
