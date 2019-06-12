@@ -1,6 +1,6 @@
 .about-form {
     width: 80%;
-    height: 70vh;
+    height: auto;
     margin-top: 5%;
     margin-left: 10%;
     border: 2px solid lightgray;
@@ -10,4 +10,15 @@
     justify-content: baseline;
     text-transform: uppercase;
     text-align: center;
+  }
+
+  img {
+    width: 260px;
+    height: 375px;
+    position: relative;
+  }
+
+  .about-us {
+    color: #525252;
+    font-size: 12px;
   }
