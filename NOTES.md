@@ -1,5 +1,5 @@
--Style components for login 
--Messages when logged in
--Aligning dropdown with portfolio
--Shopping Cart
--AWS S3 for unploading avatar
+-User gallery
+-Messages to admin
+-Adding total to Shopping Cart
+-Checkout for Shopping cart
+-Displaying current user info in profile to edit
