@@ -25,7 +25,7 @@ class Shopping extends Component {
     const items = this.props.cart.map(product => {
       return (
           <div key={product.product_id}>
-            <h2>Package: {product.product_name}</h2>
+            <h2>{product.product_name}</h2>
             <div className="description">Description:</div> {product.product_description} 
             <h4>Price: ${product.price}</h4>
             <Button onClick={() => this.props.removeItem(product)}>Remove</Button>
@@ -37,11 +37,16 @@ class Shopping extends Component {
       );
     });
     return <div><h1 className="shoppingcart">Shopping Cart</h1>
-    <Button onClick={this.props.clearCart}>Clear Cart</Button>
     <div className="cart-form">
     {items}
+    <br />
+    <br />
+    <Button onClick={this.props.clearCart}>Clear Cart</Button>
+    <br />
+    <br />
     </div>
     </div>
+    
     ;
   }
 }

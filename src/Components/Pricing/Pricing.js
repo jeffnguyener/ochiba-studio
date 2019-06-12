@@ -50,7 +50,7 @@ class Pricing extends Component {
     const items = this.state.products.map(product => {
       return (
         <div key={product.product_id}>
-          <h1>Package: {product.product_name}</h1>
+          <h1>{product.product_name}</h1>
           <div className="description">Description:</div> {product.product_description} 
           <h4>Price: ${product.price}</h4>
           <Button onClick={() => this.props.addToCart(product)}>
