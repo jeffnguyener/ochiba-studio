@@ -13,6 +13,8 @@ class App extends React.Component {
       this.props.getSavedItem(savedItems)
     }
 
+    console.log(localStorage)
+
     window.onbeforeunload = () => {
       localStorage.setItem('cart', JSON.stringify(this.props.cart))
     }

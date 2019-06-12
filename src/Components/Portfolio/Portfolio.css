@@ -1,0 +1,7 @@
+div .box-container {
+    width: 80%;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 10%;
+    border: 2px solid lightgray;
+}

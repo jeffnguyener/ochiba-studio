@@ -29,7 +29,7 @@ class Pricing extends Component {
 
   componentDidMount() {
     axios
-      .get("/shopping/items")
+      .get("/shopping/products")
       .then(res => this.setState({ products: res.data }));
   }
 
@@ -37,7 +37,16 @@ class Pricing extends Component {
     console.log("the id is", id);
   };
 
+  addItemToCart = (product) => {
+    this.props.addToCart(product)
+    const {cart} = this.props.shoppingReducer
+    axios.post('/shopping/additem', {cart}).then(response => {
+      console.log(response.data)
+    }) 
+  }
+
   render() {
+    console.log(this.props)
     const items = this.state.products.map(product => {
       return (
         <div key={product.product_id}>
@@ -62,7 +71,9 @@ class Pricing extends Component {
   }
 }
 
+const mapStateToProps = state => state;
+
 export default connect(
-  null,
+  mapStateToProps,
   { addToCart }
 )(Pricing);

@@ -26,8 +26,9 @@ app.post('/auth/login', auth_ctrl.login)
 app.get('/auth/userdetails', auth_ctrl.getUserDetails)
 app.get('/auth/messages', auth_ctrl.getUserMessages)
 app.get('/auth/logout', auth_ctrl.logout)
+app.get('/auth/usergallery', auth_ctrl.getUserGallery)
 
-app.get('/shopping/items', shop_ctrl.getItems)
+app.get('/shopping/products', shop_ctrl.getProducts)
 
 app.post('/getSignedUrl', s3_ctrl.getSignedURL)
   

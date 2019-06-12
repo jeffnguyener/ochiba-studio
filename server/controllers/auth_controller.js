@@ -35,7 +35,7 @@ module.exports = {
         if (session.user) {
             const profileDetails = await db.get_userProfile_details({id: session.user.id})
             const { first_name, last_name, email, user_id, phone, avatar } = profileDetails[0]
-            return res.status(200).send({first_name, last_name, email, user_id, phone, avatar, })
+            return res.status(200).send({first_name, last_name, email, user_id, phone, avatar })
         }
         return res.status(401).send('Please Log In')
     },
@@ -49,6 +49,12 @@ module.exports = {
         // console.log(req.session)
         req.session.destroy()
         return res.status(200).send("logout")
+    },
+    getUserGallery: async (req, res) => {
+        const db = req.app.get('db')
+        const { session } = req
+        const gallery = await db.get_user_gallery({id: session.user_id})
+        return res.status(200).send(gallery)
     }
 
 }

@@ -15,6 +15,7 @@ import Details from './Components/UserProfile/Details'
 import UserProfile from './Components/UserProfile/UserProfile'
 import Register from './Components/Register/Register'
 import UserMessages from './Components/UserProfile/UserMessages'
+import UserGallery from './Components/UserProfile/UserGallery'
 
 //PORTFOLIO ROUTES
 import Wedding from './Components/Portfolio/Wedding'
@@ -36,6 +37,7 @@ export default (
         <Route path='/profile' component={UserProfile} />
         <Route path='/register' component={Register} />
         <Route path='/messages' component={UserMessages} />
+        <Route path='/gallery' component={UserGallery} />
 
         <Route path='/wedding' component={Wedding} />
         <Route path='/engagement' component={Engagement} />

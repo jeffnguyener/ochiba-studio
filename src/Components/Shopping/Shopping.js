@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { clearCart } from "../../redux/shoppingReducer";
+import { removeItem, clearCart } from "../../redux/shoppingReducer";
 
 import "./Shopping.css";
 
@@ -20,10 +20,6 @@ const Button = styled.button`
   }
 `;
 
-// handleClearCart = () => {
-    
-// }
-
 class Shopping extends Component {
   render() {
     const items = this.props.cart.map(product => {
@@ -32,7 +28,7 @@ class Shopping extends Component {
             <h2>Package: {product.product_name}</h2>
             <div className="description">Description:</div> {product.product_description} 
             <h4>Price: ${product.price}</h4>
-            <Button onClick={this.handleClearCart}>Remove</Button>
+            <Button onClick={() => this.props.removeItem(product)}>Remove</Button>
             <span>
                 <br /><br />
             </span>
@@ -41,6 +37,7 @@ class Shopping extends Component {
       );
     });
     return <div><h1 className="shoppingcart">Shopping Cart</h1>
+    <Button onClick={this.props.clearCart}>Clear Cart</Button>
     <div className="cart-form">
     {items}
     </div>
@@ -56,7 +53,8 @@ function mapStateToProps(reduxState) {
 }
 
 const mapDispatchToProps = {
-  clearCart
+  clearCart,
+  removeItem
 };
 
 export default connect(

@@ -1,4 +1,4 @@
--User gallery
+-Adjust for mobile responsive
 -Messages to admin
 -Adding total to Shopping Cart
 -Checkout for Shopping cart

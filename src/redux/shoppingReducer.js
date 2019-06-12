@@ -4,6 +4,7 @@ const initialState = {
 
 const ADD_TO_CART = "ADD_TO_CART";
 const GET_SAVED_ITEMS = "GET_SAVED_ITEMS";
+const REMOVE_ITEM = 'REMOVE_ITEM'
 const CLEAR_CART = 'CLEAR_CART';
 
 // Action that add the product into the cart
@@ -21,9 +22,16 @@ export function getSavedItem(savedItems){
     }
 }
 
+export function removeItem(product){
+    return {
+      type: REMOVE_ITEM,
+      payload: product
+    }
+}
+
 export function clearCart(){
     return {
-        return: CLEAR_CART
+        type: CLEAR_CART
     }
 }
 
@@ -38,8 +46,14 @@ export default function shoppingReducer(state = initialState, action) {
     // return {...state, cart: [...state.cart, action.payload]}
     case GET_SAVED_ITEMS: 
         return {...state, cart: action.payload};
+    case REMOVE_ITEM:
+        const { product_id } = action.payload
+        const updatedCart = state.cart.filter(product => {
+          return product.product_id !== product_id
+        })
+        return {...state, cart: updatedCart}
     case CLEAR_CART:
-        return { ...initialState};
+        return { ...state, cart: initialState.cart};
     default:
       return state;
   }
