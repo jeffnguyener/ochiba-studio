@@ -61,11 +61,11 @@ module.exports = {
         const db = req.app.get('db')
         const {session} = req
 
-        console.log(phone)
-        console.log(req.session)
+        // updated hashed password
+        const updatedHashPass = bcrypt.hashSync(password, 15)
 
         if (first_name !== '' && last_name !== '' && phone > 0 && email !== '', password !== ''){
-            db.update_user_profile({id: session.user.id, first_name, last_name, phone, email, password})
+            db.update_user_profile({id: session.user.id, first_name, last_name, phone, email, password: updatedHashPass})
             .then(dbRes => {
                 res.send('user updatd')
             })

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Dropzone from "react-dropzone";
+import {updateUser} from '../../redux/userReducer'
 import axios from "axios";
 import { Link } from "react-router-dom";
-import styled from 'styled-components'
+import { connect } from "react-redux";
+import styled from "styled-components";
 
 import "./User.css";
 
@@ -38,14 +40,34 @@ const Button = styled.button`
   }
 `;
 
-export default class UserProfile extends Component {
+class UserProfile extends Component {
+  constructor() {
+    super()
+    this.state = {
+        input: "",
+        edit: false
+    }
+}
+  componentDidMount() {
+    axios
+      .get("/auth/userdetails")
+      .then(res => {
+        this.props.updateUser(res.data);
+      })
+      .catch(err => {
+        this.props.history.push("/details");
+      });
+  }
+
   onDropProfile(acceptedFile) {
     uploadImage(acceptedFile[0]).then(url => {
       console.log("URL", url);
     });
   }
 
-  getUserInfo;
+// handleUpdateUser()
+
+// handleUpdateInfo()
 
   render() {
     return (
@@ -67,7 +89,7 @@ export default class UserProfile extends Component {
           <br />
           <br />
           <div className="upate-profile">
-            <form onSubmit={this.handleRegisteredUser}>
+            <form onSubmit={this.handleUpdateUser}>
               <label className="firstname-input" htmlFor="first_name">
                 First Name
               </label>
@@ -75,7 +97,7 @@ export default class UserProfile extends Component {
               <input
                 type="text"
                 id="first_name"
-                onChange={this.handleRegisterInfo}
+                onChange={this.handleUpdateInfo}
               />
               <br />
               <label className="lastname-input" htmlFor="last_name">
@@ -85,7 +107,7 @@ export default class UserProfile extends Component {
               <input
                 type="text"
                 id="last_name"
-                onChange={this.handleRegisterInfo}
+                onChange={this.handleUpdateInfo}
               />
               <br />
               <label className="contactnumber-input" htmlFor="contact-number">
@@ -95,17 +117,17 @@ export default class UserProfile extends Component {
               <input
                 type="text"
                 id="phone"
-                onChange={this.handleRegisterInfo}
+                onChange={this.handleUpdateInfo}
               />
               <br />
               <label className="email-field" htmlFor="email">
-                Email
+                {this.props.email}
               </label>
               <br />
               <input
                 type="text"
                 id="email"
-                onChange={this.handleRegisterInfo}
+                onChange={this.handleUpdateInfo}
               />
               <br />
               <label className="password-input2" htmlFor="reg-password">
@@ -115,13 +137,13 @@ export default class UserProfile extends Component {
               <input
                 type="password"
                 id="pw"
-                onChange={this.handleRegisterInfo}
+                onChange={this.handleUpdateInfo}
               />
             </form>
             <br />
             <Button>Cancel</Button>
-          <span> </span>
-          <Button type='submit'>Submit</Button>
+            <span> </span>
+            <Button type="submit">Submit</Button>
           </div>
           <br />
           <Link to="/details">Back</Link>
@@ -132,3 +154,21 @@ export default class UserProfile extends Component {
     );
   }
 }
+
+function mapStateToProps(reduxState) {
+  // console.log(reduxState)
+return {
+  first_name: reduxState.userReducer.first_name,
+  last_name: reduxState.userReducer.last_name,
+  phone: reduxState.userReducer.phone,
+  email: reduxState.updateUser.email,
+  password: reduxState.updateUser.password
+};
+}
+
+
+const mapDispatchToProps = {
+  updateUser
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
