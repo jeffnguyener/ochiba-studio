@@ -1,160 +1,219 @@
 .navbar {
-    width: 100%;
-    height: 80px;
-    background: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: 80px;
+  background: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar > span {
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    font-size: 20px;
-    text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .navbar > span:hover {
-    color: lawngreen;
-    cursor: pointer;
+  color: lawngreen;
+  cursor: pointer;
 }
 
-a, a:visited {
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-    font-size: 20px;
-    text-transform: uppercase;
-    
+a,
+a:visited {
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 a:hover {
-    color: lawngreen;
-    
+  color: lawngreen;
 }
 
 span {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 nav div span:hover {
-    color: lawngreen;
+  color: lawngreen;
 }
 
 nav div img {
-    width: 200px;
-    height: 185px;
-    margin-left: 180px;
-    margin-top: 10px;
-    /* left: 250px; */
-    /* top: 5px; */
-    /* position: relative; */
+  width: 200px;
+  height: 185px;
+  margin-left: 180px;
+  margin-top: 10px;
+  /* left: 250px; */
+  /* top: 5px; */
+  /* position: relative; */
 }
 
-.links {
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+.nav-links {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .p-dropdown {
-    position: relative;
-    cursor: pointer;
+  position: relative;
+  cursor: pointer;
 }
 
-.p-dropdown:hover{
-    color: lawngreen;
+.p-dropdown:hover {
+  color: lawngreen;
 }
 
 .port-dropdown {
-    position: absolute;
-    height: auto;
-    background: #ebebeb;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 51px;
-    right: -21px;
-    box-shadow: 1px 1px 3px 2px rgba(25, 25, 25, 0.3);
-    animation: fadeIn 200ms;
+  position: absolute;
+  height: auto;
+  background: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 51px;
+  right: -21px;
+  box-shadow: 1px 1px 3px 2px rgba(25, 25, 25, 0.3);
+  animation: fadeIn 200ms;
+  z-index: 1;
 }
 
 .port-dropdown > a {
-    color: #525252;
-    width: 150px;
-    padding-left: 0px;
-    padding-right: 0px;
-    text-align: center;
+  color: #525252;
+  width: 150px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
+  z-index: 1;
 }
 
 .port-dropdown > a:hover {
-    color: lawngreen;
-    cursor: pointer;
-    background: black;
+  color: lawngreen;
+  cursor: pointer;
+  background: black;
 }
 
 .divider {
-    width: 100%;
-    border-bottom: 1px solid lightgray;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
 }
 
 @keyframes slidedown {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-      }
-    
-      to {
-        opacity: 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-      }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+  from {
+    opacity: 0;
   }
 
+  to {
+    opacity: 1;
+  }
+}
+
 .cart {
-    color: white;
+  color: white;
 }
 
 .cart:hover {
-    color: lawngreen;
+  color: lawngreen;
 }
 
 .hamburger:hover {
-    cursor: pointer;
-    color: lawngreen;
+  cursor: pointer;
+  color: lawngreen;
 }
 
 .hamburger {
-    color: white;
-    display: block;
+  color: white;
+  display: block;
+  overflow: hidden;
 }
 
 .sidebar {
-    position: absolute;
-    right: 0;
-    top: 80px;
-    
+  position: absolute;
+  right: 0;
+  top: 80px;
 }
 
 .sidebar > a {
+  color: #525252;
+  background: #ebebeb;
+  font-size: 15px;
+  height: 12px;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  box-shadow: 1px 1px 3px 1px rgba(25, 25, 25, 0.3);
+  animation: slidedown 200ms;
+}
+
+.sidebar > a:hover {
+  background: black;
+  color: lawngreen;
+}
+
+.mobile-icons {
+  display: none;
+}
+
+.mobile-sidebar {
+  display: none;
+}
+
+
+/* Tablet View*/
+/* @media only screen and (max-width: 820px) {
+  nav div img {
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+  .nav-links {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .mobile-icons {
+    padding: 5px;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  .sidebar {
+    display: none;
+    right: 100px;
+  }
+   .mobile-sidebar {
+    position: absolute;
+    right: 0;
+    top: 80px;
+  }
+
+  .mobile-sidebar > a {
     color: #525252;
     background: #ebebeb;
     font-size: 15px;
@@ -167,24 +226,31 @@ nav div img {
     border: 1px solid lightgray;
     box-shadow: 1px 1px 3px 1px rgba(25, 25, 25, 0.3);
     animation: slidedown 200ms;
+  }
+} */
+
+/* iPhone View */
+@media only screen and (max-width: 375px) {
+  nav div img {
+    margin-left: 25px;
+    margin-top: 15px;
+  }
+  .nav-links {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .sidebar {
+    display: none;
+    position: right;
 }
 
-.sidebar > a:hover {
-    background: black;
-    color: lawngreen;
-}
-
-@media only screen and (max-width: 820px){
-    nav div img {
-        margin-left: 35px;
-        margin-top: 10px;
-    }
-    .links {
-        text-align: center;
-        width: 100%;
-        display: none;
-    }
-   nav ul .links .cart {
-        display: flex;
-    }
+  .mobile-icons {
+    width: 25%;
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
 }

@@ -11,7 +11,8 @@ class Navbar extends Component {
     super();
     this.state = {
       showDropdown: false,
-      showLoginDropdown: false
+      showLoginDropdown: false,
+      showMobileDropdown: false
     };
   }
 
@@ -25,27 +26,50 @@ class Navbar extends Component {
     });
   };
 
+  toggleMobileDropdown = () => {
+    this.setState({
+      showMobileDropdown: !this.state.showMobileDropdown
+    })
+  }
+
   render() {
     return (
       <nav className="navbar">
         <div>
-          <img id='logo' alt='logo' src={oslogo} />
+          <img id="logo" alt="logo" src={oslogo} />
         </div>
-        <ul className="links">
+        <div className="mobile-sidebar">
+            <Link to="/login" onClick={this.toggleMobileDropdown}>
+              Login/Register
+            </Link>
+            <Link to="/aboutus">About</Link>
+            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/Pricing">Pricing</Link>
+            <Link to="/Blog">Blog</Link>
+          </div>
+        <ul className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/aboutus">About Us</Link>
           <span className="p-dropdown" onClick={this.toggleDropdown}>
             Portfolio
             {this.state.showDropdown ? (
               <div className="port-dropdown">
-               <div className="divider"/>
-                <Link to="/wedding" onClick={this.toggleDropdown}>Wedding</Link>
-                <div className="divider"/>
-                <Link to="/engagement" onClick={this.toggleDropdown}>Engagement</Link>
-                <div className="divider"/>
-                <Link to="/portraits" onClick={this.toggleDropdown}>Portraits</Link>
-                <div className="divider"/>
-                <Link to="/maternity" onClick={this.toggleDropdown}>Maternity</Link>
+                <div className="divider" />
+                <Link to="/wedding" onClick={this.toggleDropdown}>
+                  Wedding
+                </Link>
+                <div className="divider" />
+                <Link to="/engagement" onClick={this.toggleDropdown}>
+                  Engagement
+                </Link>
+                <div className="divider" />
+                <Link to="/portraits" onClick={this.toggleDropdown}>
+                  Portraits
+                </Link>
+                <div className="divider" />
+                <Link to="/maternity" onClick={this.toggleDropdown}>
+                  Maternity
+                </Link>
               </div>
             ) : null}
           </span>
@@ -60,15 +84,27 @@ class Navbar extends Component {
             onClick={this.toggleLoginDropdown}
           />
         </ul>
+        <ul className="mobile-icons">
+          <Link to="/cart">
+            <Icon.ShoppingCart size={28} className="cart" />
+          </Link>
+          <Icon.Menu
+            size={30}
+            className="hamburger"
+            onClick={this.toggleMobileDropdown}
+          />
+        </ul>
         {/* login/register drop down */}
         {this.state.showLoginDropdown ? (
           <div className="sidebar">
-            <Link to="/login" onClick={this.toggleLoginDropdown}>Login/Register</Link>
-            <Link to="/cart" onClick={this.toggleLoginDropdown}>Shopping Cart</Link>
+            <Link to="/login" onClick={this.toggleLoginDropdown}>
+              Login/Register
+            </Link>
+            <Link to="/cart" onClick={this.toggleLoginDropdown}>
+              Shopping Cart
+            </Link>
           </div>
         ) : null}
-
-        {/* products drop down */}
       </nav>
     );
   }
