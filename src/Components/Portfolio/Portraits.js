@@ -3,7 +3,7 @@ import Gallery from "react-waterfall-gallery";
 
 import './Portfolio.css'
 
-const PORTRAIT_SET = [
+const portrait_set = [
   "https://os-personal-project.s3-us-west-1.amazonaws.com/Portraits/DSC_3201.jpg",
   "https://os-personal-project.s3-us-west-1.amazonaws.com/Portraits/DSC_3314-2.jpg",
   "https://os-personal-project.s3-us-west-1.amazonaws.com/Portraits/choly.jpg",
@@ -18,6 +18,8 @@ const PORTRAIT_SET = [
 
 export default class Portraits extends Component {
   render() {
-    return <div className="box-container"><Gallery images={PORTRAIT_SET} /> </div>
+    return <div className="box-container">
+      <Gallery step={100} images={portrait_set} /> 
+      </div>
   }
 }

@@ -1,5 +1,7 @@
 -Adjust for mobile responsive
 -Messages to admin
 -Adding total to Shopping Cart
--Checkout for Shopping cart
+-Stripe checkout for Shopping cart
 -Displaying current user info in profile to edit
+-Updating DB when updating user profile
+-Adding deleting user from user console

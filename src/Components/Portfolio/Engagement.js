@@ -3,7 +3,7 @@ import Gallery from "react-waterfall-gallery";
 
 import './Portfolio.css'
 
-const ENGAGE_SET = [
+const engage_set = [
     "https://os-personal-project.s3-us-west-1.amazonaws.com/Engagement/20170610-DSC_1527.jpg",
     "https://live.staticflickr.com/4240/34964846280_a0c10d4368_k.jpg",
     "https://os-personal-project.s3-us-west-1.amazonaws.com/Engagement/20170610-DSC_1649-2.jpg",
@@ -17,6 +17,8 @@ const ENGAGE_SET = [
 
 export default class Engagement extends Component {
   render() {
-    return <div className="box-container"><Gallery images={ENGAGE_SET} /> </div>
+    return <div className="box-container">
+      <Gallery step={100} images={engage_set} /> 
+      </div>
   }
 }
