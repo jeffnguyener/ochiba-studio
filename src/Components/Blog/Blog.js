@@ -6,7 +6,7 @@ import parisImg from "../Navbar/images/paris.jpg";
 import "./Blog.css";
 
 const Image = styled.img`
-  margin-top: 10%;
+  margin-top: 5%;
   width: 80%;
   height: 80%;
 `;
@@ -17,10 +17,11 @@ const Blog = () => (
     <div>
       <Image id="paris-img" alt="paris" src={parisImg} />
       <br />
-      <br />
-    <span className="blog-post"><h1>Feb 2019</h1>sdasl;djfas;djfasjfsasl;dfskj
+    <span className="blog-post"><h1>Feb 2019</h1>We traveled to Paris! Of course, we had to do a photoshoot with the Eiffel Tower in the background. It's definitely bigger than the one in Las Vegas! Lol, it is truly a sight to see. European architecture is amazing and with so much history behind them. We would travel back again, just to see more history throughout the country. 
     </span>
     </div>
+    <br />
+    <br />
   </div>
 );
 
