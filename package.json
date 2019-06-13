@@ -19,9 +19,11 @@
     "react-responsive-carousel": "^3.1.49",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
+    "react-stripe-checkout": "^2.6.3",
     "react-waterfall-gallery": "^1.0.4",
     "redux": "^4.0.1",
     "reset-css": "^4.0.1",
+    "stripe": "^7.1.0",
     "styled-components": "^4.3.1"
   },
   "scripts": {
