@@ -86,9 +86,10 @@ class Register extends Component {
           <input type="text" id="phone" onChange={this.handleRegisterInfo} />
 
           <br />
-          <label className="email-input" htmlFor="email">
+          <label className="email_input" htmlFor="email">
             Email
           </label>
+          <br />
           <input type="text" id="email" onChange={this.handleRegisterInfo} />
 
           <br />
@@ -97,7 +98,7 @@ class Register extends Component {
           </label>
           <br />
           <input type="password" id="pw" onChange={this.handleRegisterInfo} />
-
+          <br />
           <br />
           <br />
           <Button>Cancel</Button>
