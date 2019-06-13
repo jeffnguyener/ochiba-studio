@@ -5,7 +5,8 @@ const initialState = {
     email: ' ',
     password: ' ',
     messages: ' ',
-    date: ''
+    date: '',
+    avatar: ''
 }
 
 const UPDATE_USER = 'UPDATE_USER'
@@ -35,8 +36,8 @@ export function updateMessage(messageObj){
 function reducer(state = initialState, action){
     switch(action.type){
         case UPDATE_USER:
-            const { first_name, last_name, phone, email, password } = action.payload
-            return { ...state, first_name, last_name, phone, email, password: password.hash }
+            const { first_name, last_name, phone, email, password, avatar } = action.payload
+            return { ...state, first_name, last_name, phone, email, password: password, avatar }
         case CLEAR_USER:
             return { ...initialState }
         case UPDATE_MSG:

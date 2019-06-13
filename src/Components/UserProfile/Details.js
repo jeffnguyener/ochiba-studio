@@ -26,10 +26,12 @@ class Details extends Component {
     axios
       .get("/auth/userdetails")
       .then(res => {
+        
         this.props.updateUser(res.data);
       })
       .catch(err => {
-        this.props.history.push("/login");
+        // this.props.history.push("/login");
+        console.log(err.message)
       });
   }
 

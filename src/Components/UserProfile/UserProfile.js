@@ -45,10 +45,12 @@ class UserProfile extends Component {
     super()
     this.state = {
         input: "",
-        edit: false
+        edit: false,
+        url: ''
     }
 }
   componentDidMount() {
+    this.setState({url: this.props.avatar})
     axios
       .get("/auth/userdetails")
       .then(res => {
@@ -59,10 +61,15 @@ class UserProfile extends Component {
       });
   }
 
-  onDropProfile(acceptedFile) {
-    uploadImage(acceptedFile[0]).then(url => {
-      console.log("URL", url);
-    });
+  onDropProfile = (acceptedFile) => {
+    uploadImage(acceptedFile[0])
+      .then(url => {
+        this.setState({url})
+        return axios.post('/update/user/avatar', {url});
+      })
+      .then(response => {
+        console.log(response.data)
+      });
   }
 
 // handleUpdateUser()
@@ -70,16 +77,23 @@ class UserProfile extends Component {
 // handleUpdateInfo()
 
   render() {
+    console.log(this.props)
     return (
       <div className="user-form">
         <h1>My Profile</h1>
         <div className="menu">
+          
           <Dropzone onDrop={this.onDropProfile}>
             {({ getRootProps, getInputProps }) => (
               <section>
                 <div
                   {...getRootProps()}
-                  style={{ width: 100, height: 100, background: "lightgray" }}
+                  style={{ width: 150, height: 200, backgroundImage: `url(${this.state.url})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  border: '2px solid lightgrey'
+                }}
                 >
                   <input {...getInputProps()} />
                 </div>
@@ -161,8 +175,9 @@ return {
   first_name: reduxState.userReducer.first_name,
   last_name: reduxState.userReducer.last_name,
   phone: reduxState.userReducer.phone,
-  email: reduxState.updateUser.email,
-  password: reduxState.updateUser.password
+  email: reduxState.userReducer.email,
+  password: reduxState.userReducer.password,
+  avatar: reduxState.userReducer.avatar
 };
 }
 
