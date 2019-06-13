@@ -55,6 +55,22 @@ module.exports = {
         const { session } = req
         const gallery = await db.get_user_gallery({id: session.user_id})
         return res.status(200).send(gallery)
+    },
+    updateUserProfile: async (req, res) => {
+        const { first_name, last_name, phone, email, password } = req.body
+        const db = req.app.get('db')
+        const {session} = req
+
+        console.log(phone)
+        console.log(req.session)
+
+        if (first_name !== '' && last_name !== '' && phone > 0 && email !== '', password !== ''){
+            db.update_user_profile({id: session.user.id, first_name, last_name, phone, email, password})
+            .then(dbRes => {
+                res.send('user updatd')
+            })
+        } 
+        
     }
 
 }

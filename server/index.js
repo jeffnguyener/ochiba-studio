@@ -27,6 +27,7 @@ app.get('/auth/userdetails', auth_ctrl.getUserDetails)
 app.get('/auth/messages', auth_ctrl.getUserMessages)
 app.get('/auth/logout', auth_ctrl.logout)
 app.get('/auth/usergallery', auth_ctrl.getUserGallery)
+app.put('/auth/updateprofile', auth_ctrl.updateUserProfile)
 
 app.get('/shopping/products', shop_ctrl.getProducts)
 
