@@ -26,7 +26,7 @@ class Details extends Component {
     axios
       .get("/auth/userdetails")
       .then(res => {
-        
+
         this.props.updateUser(res.data);
       })
       .catch(err => {
@@ -50,12 +50,21 @@ class Details extends Component {
             <div className="menu">
             <div>Welcome {this.props.first_name}!</div>
             <br />
+            <div style={{ width: 150, height: 200, backgroundImage: `url(${this.props.avatar})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  border: '2px solid lightgrey'
+                }}>
+                </div>
             <br />
             <Link to='/profile'>Update Profile</Link>
             <Link to='/messages'>My Messages</Link>
             </div>
             <br />
         <Button onClick={this.handUserLogout}>Logout</Button>
+        <br />
+        <br />
       </div>
     );
   }
@@ -65,7 +74,8 @@ console.log(Link)
 function mapStateToProps(reduxState) {
     // console.log(reduxState)
   return {
-    first_name: reduxState.userReducer.first_name
+    first_name: reduxState.userReducer.first_name,
+    avatar: reduxState.userReducer.avatar
   };
 }
 
