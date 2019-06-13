@@ -4,8 +4,13 @@ import Gallery from "react-waterfall-gallery";
 import './Portfolio.css'
 
 const MATERNITY_SET = [
-    "https://live.staticflickr.com/4240/34964846280_a0c10d4368_k.jpg",
-    "https://live.staticflickr.com/4240/34964846280_a0c10d4368_k.jpg"
+    "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/20160526-DSC_0717.jpg",
+    "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/20160526-DSC_0722.jpg",
+    "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/20160605-DSC_0764.jpg",
+    "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/20160605-DSC_0790.jpg",
+    "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/20160605-DSC_0820.jpg",
+    "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/DSC_5520-2.jpg",
+    "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/DSC_5605-2.jpg"
 ];
 
 export default class Maternity extends Component {
