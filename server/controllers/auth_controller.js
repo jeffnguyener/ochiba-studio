@@ -85,35 +85,37 @@ module.exports = {
       (first_name !== "" && last_name !== "" && phone > 0 && email !== "",
       password !== "")
     ) {
-      const result = db.update_user_profile({
-        id: session.user.id,
-        first_name,
-        last_name,
-        phone,
-        email,
-        password: updatedHashPass
-      }).then(dbRes => {
-        res.send(result);
-      });
+      const result = db
+        .update_user_profile({
+          id: session.user.id,
+          first_name,
+          last_name,
+          phone,
+          email,
+          password: updatedHashPass
+        })
+        .then(dbRes => {
+          res.send(result);
+        });
     }
   },
   updateAvatar: (req, res) => {
     const { url } = req.body;
     const { id } = req.session.user;
-    console.log(url)
-    const db = req.app.get('"db"');
-    db.upload_avatar({id, url}).then(response => {
-        res.send('user updated')
-    })
+    // console.log(req.session);
+    const db = req.app.get("db");
+    db.upload_avatar({ id, url }).then(response => {
+      res.send("user updated");
+    });
   },
   deleteAvatar: (req, res) => {
-    const { id } = req.session.user
-    const { avatar } = req.params
-    console.log(req.params)
-    const db = req.app.get("db")
-    db.delete_avatar({id, avatar}).then(response => {
-      res.send('Avatar deleted')
-      .catch((err) => res.status(500).send(err))
-    })
+    const { id } = req.session.user;
+    const { url } = req.body;
+    // console.log(req.body)
+    const db = req.app.get("db");
+    db.delete_avatar({ id, url }).then(response => {
+      console.log(response)
+      res.status(200).send("Avatar deleted")
+    }).catch(err => res.status(500).send(err));
   }
 };

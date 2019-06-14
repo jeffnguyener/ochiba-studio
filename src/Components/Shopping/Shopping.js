@@ -20,6 +20,10 @@ const Button = styled.button`
   }
 `;
 
+//  totalPrice = () => {
+//    this.
+//  }
+
 class Shopping extends Component {
   render() {
     const items = this.props.cart.map(product => {
