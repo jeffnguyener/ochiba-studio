@@ -13,7 +13,9 @@ const AboutUs = () => (
   <div className="about-form">
     <h1>About Us</h1>
     <div>
+      <div className="img-rotation">
       <Image id="us-img" alt="us" src={usImg} />
+      </div>
       <br />
       <br />
       <span className="about-us">

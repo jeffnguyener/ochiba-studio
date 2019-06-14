@@ -3,4 +3,4 @@
 -Adding total to Shopping Cart
 -Stripe checkout for Shopping cart
 -Displaying current user info in profile to edit
--Adding deleting user from user console OR deleting profile avatar
+- Deleting profile avatar
