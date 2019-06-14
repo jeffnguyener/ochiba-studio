@@ -38,22 +38,27 @@ class Pricing extends Component {
   };
 
   addItemToCart = (product) => {
-    this.props.addToCart(product)
-    const {cart} = this.props.shoppingReducer
-    axios.post('/shopping/additem', {cart}).then(response => {
-      console.log(response.data)
-    }) 
+    if(this.props.userReducer.first_name){
+      this.props.addToCart(product)
+      axios.post('/add/user/cart', {product})
+      .then(response => console.log(response.data))
+    } else {
+      this.props.addToCart(product)
+      const {cart} = this.props.shoppingReducer
+      axios.post('/shopping/additem', {cart}).then(response => {
+        console.log(response.data)
+      }) 
+    }
   }
 
   render() {
-    console.log(this.props)
     const items = this.state.products.map(product => {
       return (
         <div key={product.product_id}>
           <h1>{product.product_name}</h1>
           <div className="description">Description:</div> {product.product_description} 
           <h4>Price: ${product.price}</h4>
-          <Button onClick={() => this.props.addToCart(product)}>
+          <Button onClick={() => this.addItemToCart(product)}>
             Add To Cart
           </Button>
           <span>

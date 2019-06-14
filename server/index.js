@@ -35,6 +35,7 @@ app.post('/auth/register', auth_ctrl.register)
 app.post('/auth/login', auth_ctrl.login)
 app.post('/update/user/avatar', auth_ctrl.updateAvatar)
 
+app.post('/add/user/cart', shop_ctrl.addItem)
 app.post('/getSignedUrl', s3_ctrl.getSignedURL)
 
 //PUT ENDPOINTS

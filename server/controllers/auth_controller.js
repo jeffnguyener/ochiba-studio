@@ -16,7 +16,8 @@ module.exports = {
       email,
       password: hash
     });
-    session.user = { id: createUser[0].user_id, email: createUser[0].email };
+    const createCart = await db.add_shopping_cart_id({id: createUser[0].user_id})
+    session.user = { id: createUser[0].user_id, email: createUser[0].email, cart_id: createCart[0].id };
     res.status(200).send(session.user);
   },
   login: async (req, res) => {
@@ -26,10 +27,10 @@ module.exports = {
     const { session } = req;
     const userFound = await db.check_user_email({ email });
     if (!userFound[0]) return res.status(401).send("Email does not exist");
+    const shoppingCart = await db.get_shopping_cart_id({user_id: userFound[0].user_id})
     const authenticated = bcrypt.compareSync(password, userFound[0].password);
-    console.log(authenticated);
     if (authenticated) {
-      session.user = { id: userFound[0].user_id, email: userFound[0].email };
+      session.user = { id: userFound[0].user_id, email: userFound[0].email, cart_id: shoppingCart[0].id};
       res.status(200).send(session.user);
     } else {
       return res.status(401).send("Email or password is incorrect");
