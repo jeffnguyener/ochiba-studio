@@ -21,18 +21,28 @@ app.use(session({
     }
 }))
 
-app.post('/auth/register', auth_ctrl.register)
-app.post('/auth/login', auth_ctrl.login)
+//GET ENDPOINTS
 app.get('/auth/userdetails', auth_ctrl.getUserDetails)
 app.get('/auth/messages', auth_ctrl.getUserMessages)
 app.get('/auth/logout', auth_ctrl.logout)
 app.get('/auth/usergallery', auth_ctrl.getUserGallery)
-app.put('/auth/updateprofile', auth_ctrl.updateUserProfile)
-app.post('/update/user/avatar', auth_ctrl.updateAvatar)
 
 app.get('/shopping/products', shop_ctrl.getProducts)
 
+
+//POST ENDPOINTS
+app.post('/auth/register', auth_ctrl.register)
+app.post('/auth/login', auth_ctrl.login)
+app.post('/update/user/avatar', auth_ctrl.updateAvatar)
+
 app.post('/getSignedUrl', s3_ctrl.getSignedURL)
+
+//PUT ENDPOINTS
+app.put('/auth/updateprofile', auth_ctrl.updateUserProfile)
+
+//DELETE ENDPOINTS
+app.delete('/update/user/deleteavatar', auth_ctrl.deleteAvatar)
+
   
 
 

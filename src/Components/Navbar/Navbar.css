@@ -185,49 +185,7 @@ nav div img {
 
 
 /* Tablet View*/
-/* @media only screen and (max-width: 820px) {
-  nav div img {
-    margin-left: 35px;
-    margin-top: 10px;
-  }
-  .nav-links {
-    text-align: center;
-    width: 100%;
-    display: none;
-  }
-  .mobile-icons {
-    padding: 5px;
-    width: 20%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
-  .sidebar {
-    display: none;
-    right: 100px;
-  }
-   .mobile-sidebar {
-    position: absolute;
-    right: 0;
-    top: 80px;
-  }
 
-  .mobile-sidebar > a {
-    color: #525252;
-    background: #ebebeb;
-    font-size: 15px;
-    height: 12px;
-    width: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid lightgray;
-    box-shadow: 1px 1px 3px 1px rgba(25, 25, 25, 0.3);
-    animation: slidedown 200ms;
-  }
-} */
 
 /* iPhone View */
 @media only screen and (max-width: 375px) {
