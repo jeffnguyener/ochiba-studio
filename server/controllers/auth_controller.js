@@ -77,7 +77,7 @@ module.exports = {
     const { first_name, last_name, phone, email, password } = req.body;
     const db = req.app.get("db");
     const { session } = req;
-
+    // console.log(req.body)
     // updated hashed password
     const updatedHashPass = bcrypt.hashSync(password, 15);
 
@@ -85,7 +85,7 @@ module.exports = {
       (first_name !== "" && last_name !== "" && phone > 0 && email !== "",
       password !== "")
     ) {
-      db.update_user_profile({
+      const result = db.update_user_profile({
         id: session.user.id,
         first_name,
         last_name,
@@ -93,7 +93,7 @@ module.exports = {
         email,
         password: updatedHashPass
       }).then(dbRes => {
-        res.send("user updated");
+        res.send(result);
       });
     }
   },
@@ -101,9 +101,19 @@ module.exports = {
     const { url } = req.body;
     const { id } = req.session.user;
     console.log(url)
-    const db = req.app.get("db");
+    const db = req.app.get('"db"');
     db.upload_avatar({id, url}).then(response => {
         res.send('user updated')
+    })
+  },
+  deleteAvatar: (req, res) => {
+    const { id } = req.session.user
+    const { avatar } = req.params
+    console.log(req.params)
+    const db = req.app.get("db")
+    db.delete_avatar({id, avatar}).then(response => {
+      res.send('Avatar deleted')
+      .catch((err) => res.status(500).send(err))
     })
   }
 };
