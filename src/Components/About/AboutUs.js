@@ -22,7 +22,7 @@ const AboutUs = () => (
         the greatest moments on your special day so that when you look back at
         them, you will cherish those wonderful memories you’ve made. If you’re
         wondering what “Ochiba” (oh-chee-bah) means, it is defined as “fallen
-        leaves” in Japanese.
+        leaves” in Japanese. Thanks for stopping by and checking out our work!
       </span>
     </div>
     <br />
