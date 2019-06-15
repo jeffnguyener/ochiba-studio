@@ -10,8 +10,10 @@ import mat4 from './Maternity/maternity4.jpg'
 import mat5 from './Maternity/maternity5.jpg'
 import mat6 from './Maternity/maternity6.jpg'
 import mat7 from './Maternity/maternity7.jpg'
+import mat8 from './Maternity/maternity8.jpg'
+import mat9 from './Maternity/maternity9.jpg'
 
-const maternity_img = [ mat1, mat2, mat3, mat4, mat5, mat6, mat7
+const maternity_img = [ mat1, mat2, mat3, mat4, mat5, mat6, mat7, mat8, mat9
 ];
 
 // const maternity_set = [

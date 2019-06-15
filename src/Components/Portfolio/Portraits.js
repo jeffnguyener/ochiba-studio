@@ -13,9 +13,12 @@ import port7 from './Portraits/portrait7.jpg'
 import port8 from './Portraits/portrait8.jpg'
 import port9 from './Portraits/portrait9.jpg'
 import port10 from './Portraits/portrait10.jpg'
+import port11 from './Portraits/portrait11.jpg'
+import port12 from './Portraits/portrait12.jpg'
 
 
-const portrait_img = [ port1, port2, port3, port4, port5, port6, port7, port8, port9, port10 ];
+
+const portrait_img = [ port1, port2, port3, port11, port4, port5, port6, port7, port8, port9, port10, port12 ];
 
 // const portrait_set = [
 //   "https://os-personal-project.s3-us-west-1.amazonaws.com/Portraits/DSC_3201.jpg",
