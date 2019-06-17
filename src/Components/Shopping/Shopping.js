@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { removeItem, clearCart } from "../../redux/shoppingReducer";
+import { Link } from 'react-router-dom'
 
 import "./Shopping.css";
 
@@ -46,6 +47,7 @@ class Shopping extends Component {
     <br />
     <br />
     <Button onClick={this.props.clearCart}>Clear Cart</Button>
+    <Link to="/checkout">Checkout</Link>
     <br />
     <br />
     </div>
