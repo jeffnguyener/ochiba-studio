@@ -59,6 +59,7 @@ class Details extends Component {
                 </div>
             <br />
             <Link to='/profile'>Update Profile</Link>
+            <Link to='/gallery'>My Gallery</Link>
             <Link to='/messages'>My Messages</Link>
             </div>
             <br />
