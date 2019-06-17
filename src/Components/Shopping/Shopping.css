@@ -32,3 +32,17 @@ div .description {
 form {
   display: inline-block;
 }
+
+.shopping-cart-form {
+    width: 80%;
+    height: auto;
+    margin-top: 5%;
+    margin-left: 8%;
+    padding: 15px;
+    right: 50px;
+    border: 2px solid lightgray;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+  
+}
