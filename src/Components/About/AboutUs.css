@@ -46,3 +46,14 @@
     opacity: 1;
     }
     } 
+
+    .email-contact a {
+      color: #525252;
+      font-size: 12px;
+    }
+
+    .email-contact a:hover {
+      color: lawngreen;
+      text-shadow: 1px 0 gray;
+      text-decoration: underline;
+    }

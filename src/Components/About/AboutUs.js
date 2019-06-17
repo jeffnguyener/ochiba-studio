@@ -29,6 +29,8 @@ const AboutUs = () => (
     </div>
     <br />
     <br />
+    <h5 className="email-contact">Email: <a href="Email: ochibastudio@gmail.com">OchibaStudio@gmail.com</a>
+    </h5>
   </div>
 );
 
