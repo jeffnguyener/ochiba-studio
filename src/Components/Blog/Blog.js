@@ -14,12 +14,12 @@ const Image = styled.img`
 const Blog = () => (
   <div className="blog-form">
     <h1>Blog</h1>
-    <div>
+    <div className="zoomIn">
       <Image id="paris-img" alt="paris" src={parisImg} />
+      </div>
       <br />
     <span className="blog-post"><h1>Feb 2019</h1>We traveled to Paris! Of course, we had to do a photoshoot with the Eiffel Tower in the background. It's definitely bigger than the one in Las Vegas! Lol, it is truly a sight to see. European architecture is amazing and with so much history behind them. We would travel back again, just to see more history throughout the country. 
     </span>
-    </div>
     <br />
     <br />
   </div>

@@ -5,13 +5,15 @@ const initialState = {
     email: ' ',
     password: ' ',
     messages: ' ',
-    date: '',
-    avatar: ''
+    date: ' ',
+    avatar: ' ',
+    image: ' ',
 }
 
 const UPDATE_USER = 'UPDATE_USER'
 const CLEAR_USER = 'CLEAR_USER'
 const UPDATE_MSG = 'UPDATE_MSG'
+const UPDATE_GALLERY = "UPDATE_GALLERY"
 
 export function updateUser(user){
     return {
@@ -33,6 +35,13 @@ export function updateMessage(messageObj){
     }
 }
 
+export function updateGallery(image){
+    return {
+        type: UPDATE_GALLERY,
+        payload: image
+    }
+}
+
 function reducer(state = initialState, action){
     switch(action.type){
         case UPDATE_USER:
@@ -43,6 +52,9 @@ function reducer(state = initialState, action){
         case UPDATE_MSG:
             const { body_msg, date } = action.payload
             return { ...state, messages: body_msg, date }
+        case UPDATE_GALLERY:
+            const { image } = action.payload
+            return { ...state, image: image }
         default:
             return state
     }

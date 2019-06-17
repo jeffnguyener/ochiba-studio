@@ -71,7 +71,9 @@ module.exports = {
   getUserGallery: async (req, res) => {
     const db = req.app.get("db");
     const { session } = req;
-    const gallery = await db.get_user_gallery({ id: session.user_id });
+    // console.log(session)
+    const gallery = await db.get_user_gallery({ id: session.user.id });
+    // console.log(gallery)
     return res.status(200).send(gallery);
   },
   updateUserProfile: async (req, res) => {

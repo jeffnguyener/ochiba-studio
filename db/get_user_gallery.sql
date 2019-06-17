@@ -1,3 +1,5 @@
-SELECT gallery.image
+SELECT gallery.image, users.first_name
 FROM gallery
-JOIN users gallery.user_id = users.user_id
+JOIN users
+ON gallery.user_id = users.user_id
+WHERE users.user_id = ${id}
