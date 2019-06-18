@@ -243,10 +243,12 @@ nav div img {
     flex-direction: column;
     align-items: flex-end;
     margin-left: 200px;
-    margin-top: 155px;
+    margin-top: 158px;
     justify-content: flex-end;
     z-index: 1;
     position: absolute;
+    background: #ebebeb;
+
   }
 
   .mobile-icons {
