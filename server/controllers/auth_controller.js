@@ -66,7 +66,7 @@ module.exports = {
   logout: (req, res) => {
     // console.log(req.session)
     req.session.destroy();
-    return res.status(200).send("logout");
+    return res.status(200).send("Logged Out");
   },
   getUserGallery: async (req, res) => {
     const db = req.app.get("db");
