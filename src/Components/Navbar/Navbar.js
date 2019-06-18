@@ -33,12 +33,16 @@ class Navbar extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <nav className="navbar">
         <div>
           <img id="logo" alt="logo" src={oslogo} />
         </div>
-        <div className="mobile-sidebar">
+        {
+          this.showMobileDropdown ?
+          (
+            <div className="mobile-sidebar">
             <Link to="/login" onClick={this.toggleMobileDropdown}>
               Login/Register
             </Link>
@@ -47,6 +51,10 @@ class Navbar extends Component {
             <Link to="/Pricing">Pricing</Link>
             <Link to="/Blog">Blog</Link>
           </div>
+          )
+          :
+          null
+        }
         <ul className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/aboutus">About Us</Link>

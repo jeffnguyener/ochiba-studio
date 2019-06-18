@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar'
+import Footer from './Components/Footer/Footer'
 import { HashRouter } from 'react-router-dom'
 import router from './router'
 import { connect } from 'react-redux'
@@ -25,6 +26,7 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
          {router}
+        <Footer />
       </HashRouter>
      );
   }

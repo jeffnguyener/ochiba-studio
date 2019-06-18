@@ -12,6 +12,8 @@ const auth_ctrl = require('./controllers/auth_controller')
 const shop_ctrl = require('./controllers/shopping_controller')
 const s3_ctrl = require('./controllers/s3_controller')
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.use(cors())
 app.use(bodyParser.json())
 app.use(express.json())

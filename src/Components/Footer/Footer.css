@@ -1,0 +1,8 @@
+div .reg-logo {
+    color: gray;
+    display: flex;
+    width: 95%;
+    height: 10vh;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
