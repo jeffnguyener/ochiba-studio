@@ -21,9 +21,6 @@ const Button = styled.button`
   }
 `;
 
-//  totalPrice = () => {
-//    this.
-//  }
 
 class Shopping extends Component {
   render() {
@@ -47,7 +44,9 @@ class Shopping extends Component {
     <br />
     <br />
     <Button onClick={this.props.clearCart}>Clear Cart</Button>
+    <div className="menu">
     <Link to="/checkout">Checkout</Link>
+    </div>
     <br />
     <br />
     </div>

@@ -3,14 +3,17 @@ const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
 const cors = require('cors')
-const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
+const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env
 const app = express()
+const stripe = require('stripe')('stripe_key')
+const bodyParser = require('body-parser')
 
 const auth_ctrl = require('./controllers/auth_controller')
 const shop_ctrl = require('./controllers/shopping_controller')
 const s3_ctrl = require('./controllers/s3_controller')
 
 app.use(cors())
+app.use(bodyParser.json())
 app.use(express.json())
 app.use(session({
     secret: SESSION_SECRET,
@@ -44,7 +47,44 @@ app.put('/auth/updateprofile', auth_ctrl.updateUserProfile)
 //DELETE ENDPOINTS
 app.delete('/update/user/deleteavatar', auth_ctrl.deleteAvatar)
 
+//STRIPE CHECKOUT
+app.post('/api/payment', function(req, res, next){
+    //convert amount to pennies
+    const amountArray = req.body.amount.toString().split('');
+    const pennies = [];
+    for (var i = 0; i < amountArray.length; i++) {
+      if(amountArray[i] === ".") {
+        if (typeof amountArray[i + 1] === "string") {
+          pennies.push(amountArray[i + 1]);
+        } else {
+          pennies.push("0");
+        }
+        if (typeof amountArray[i + 2] === "string") {
+          pennies.push(amountArray[i + 2]);
+        } else {
+          pennies.push("0");
+        }
+          break;
+      } else {
+          pennies.push(amountArray[i])
+      }
+    }
+    const convertedAmt = parseInt(pennies.join(''));
   
+    const charge = stripe.charges.create({
+    amount: convertedAmt, // amount in cents, again
+    currency: 'usd',
+    source: req.body.token.id,
+    description: 'Test charge from react app'
+  }, function(err, charge) {
+      if (err) return res.sendStatus(500)
+      return res.sendStatus(200);
+    // if (err && err.type === 'StripeCardError') {
+    //   // The card has been declined
+    // }
+  });
+  });
+
 
 
 massive(CONNECTION_STRING).then((database) => {
