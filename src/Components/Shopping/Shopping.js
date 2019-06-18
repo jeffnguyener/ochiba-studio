@@ -46,7 +46,7 @@ class Shopping extends Component {
     <Button onClick={this.props.clearCart}>Clear Cart</Button>
     <div className="menu">
     <Link to="/checkout">Checkout</Link>
-    <span className="checkout">Must be logged in to checkout</span>
+    <span className="checkout-desc">Must be logged in to checkout</span>
     </div>
     <br />
     <br />
