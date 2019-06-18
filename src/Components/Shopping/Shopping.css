@@ -47,3 +47,8 @@ form {
     text-align: center;
   
 }
+
+.checkout-desc {
+  font-size: 12px;
+  color: gray;
+}
