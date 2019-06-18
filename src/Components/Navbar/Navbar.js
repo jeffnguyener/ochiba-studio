@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as Icon from "react-feather";
+// import { device } from '../mediaqueries'
+// import styled from 'styled-components'
 
 import oslogo from "./images/oslogo.png";
 import "./Navbar.css";
@@ -38,18 +40,16 @@ class Navbar extends Component {
       <nav className="navbar">
         <div>
           <img id="logo" alt="logo" src={oslogo} />
-        </div>
-        {
-          this.showMobileDropdown ?
-          (
+        </div >
+        {this.state.showMobileDropdown ? (
             <div className="mobile-sidebar">
             <Link to="/login" onClick={this.toggleMobileDropdown}>
               Login/Register
             </Link>
-            <Link to="/aboutus">About</Link>
-            <Link to="/portfolio">Portfolio</Link>
-            <Link to="/Pricing">Pricing</Link>
-            <Link to="/Blog">Blog</Link>
+            <Link to="/aboutus" onClick={this.toggleMobileDropdown}>About</Link>
+            <Link to="/portfolio" onClick={this.toggleMobileDropdown}>Portfolio</Link>
+            <Link to="/Pricing" onClick={this.toggleMobileDropdown}>Pricing</Link>
+            <Link to="/Blog" onClick={this.toggleMobileDropdown}>Blog</Link>
           </div>
           )
           :
@@ -83,6 +83,7 @@ class Navbar extends Component {
           </span>
           <Link to="/pricing">Pricing</Link>
           <Link to="/blog">Blog</Link>
+          <div className="desktop-icons">
           <Link to="/cart">
             <Icon.ShoppingCart size={28} className="cart" />
           </Link>
@@ -90,7 +91,7 @@ class Navbar extends Component {
             size={30}
             className="hamburger"
             onClick={this.toggleLoginDropdown}
-          />
+          /></div>
         </ul>
         <ul className="mobile-icons">
           <Link to="/cart">
@@ -124,3 +125,4 @@ const mapStateToProps = reduxState => {
   };
 };
 export default connect(mapStateToProps)(Navbar);
+

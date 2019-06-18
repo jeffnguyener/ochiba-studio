@@ -130,8 +130,15 @@ nav div img {
   }
 }
 
+.desktop-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .cart {
   color: white;
+  margin-right: 35px;
 }
 
 .cart:hover {
@@ -183,11 +190,39 @@ nav div img {
   display: none;
 }
 
+.mobile-sidebar a {
+  color: #525252;
+  background: #ebebeb;
+}
 
 /* Tablet View*/
+@media only screen and (max-width: 768px) {
+  nav div img {
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+  .nav-links {
+    text-align: center;
+    width: 60%;
+    letter-spacing: -2px;
+    margin-right: 10px;
+    display: flex;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1;
+  }
 
+  div .desktop-icons {
+    margin-right: 80px;
+    display: flex;
+    flex-direction: row;
+  }
+}
 
-/* iPhone View */
+/* iPhoneX View */
 @media only screen and (max-width: 375px) {
   nav div img {
     margin-left: 25px;
@@ -198,23 +233,28 @@ nav div img {
     width: 100%;
     display: none;
   }
+
   .sidebar {
     display: none;
   }
 
-  .mobile-sidebar {
+  div .mobile-sidebar {
     display: flex;
-    height: 100vh;
-    width:100vw;
-    z-index: 20;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 200px;
+    margin-top: 155px;
+    justify-content: flex-end;
+    z-index: 1;
+    position: absolute;
   }
 
   .mobile-icons {
-    width: 25%;
-    margin-left: 25px;
+    width: 35%;
+    margin-left: -25px;
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: row;
   }
-  
 }
