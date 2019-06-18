@@ -222,8 +222,8 @@ nav div img {
   }
 }
 
-/* iPhoneX View */
-@media only screen and (max-width: 375px) {
+/* iPhone 7/8 Plus View */
+@media only screen and (max-width: 414px) {
   nav div img {
     margin-left: 25px;
     margin-top: 15px;
@@ -250,7 +250,7 @@ nav div img {
   }
 
   .mobile-icons {
-    width: 35%;
+    width: 40%;
     margin-left: -25px;
     position: relative;
     display: flex;
