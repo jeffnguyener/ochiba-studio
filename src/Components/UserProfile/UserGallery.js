@@ -24,7 +24,7 @@ class UserGallery extends Component {
         <div className="menu">
           <div
             style={{
-              width: 200,
+              width: 500,
               height: 300,
               backgroundImage: `url(${this.props.image})`,
               backgroundSize: "cover",
