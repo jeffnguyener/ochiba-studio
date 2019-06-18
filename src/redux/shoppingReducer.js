@@ -1,11 +1,13 @@
 const initialState = {
-  cart: []
+  cart: [],
+  totalCart: []
 };
 
 const ADD_TO_CART = "ADD_TO_CART";
 const GET_SAVED_ITEMS = "GET_SAVED_ITEMS";
 const REMOVE_ITEM = 'REMOVE_ITEM'
 const CLEAR_CART = 'CLEAR_CART';
+const GET_TOTAL = 'GET_TOTAL';
 
 // Action that add the product into the cart
 export function addToCart(product) {
@@ -20,6 +22,13 @@ export function getSavedItem(savedItems){
         type: GET_SAVED_ITEMS,
         payload: savedItems
     }
+}
+
+export function getTotal(cart){
+  return {
+    type: GET_TOTAL,
+    payload: cart
+  }
 }
 
 export function removeItem(product){
@@ -46,6 +55,12 @@ export default function shoppingReducer(state = initialState, action) {
     // return {...state, cart: [...state.cart, action.payload]}
     case GET_SAVED_ITEMS: 
         return {...state, cart: action.payload};
+    case GET_TOTAL:
+      const total = state.cart.reduce();
+      console.log(total)
+      total.push(action.payload);
+
+      return { ...state, totalCart: total};
     case REMOVE_ITEM:
         const { product_id } = action.payload
         const updatedCart = state.cart.filter(product => {
