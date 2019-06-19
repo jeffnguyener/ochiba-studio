@@ -5,7 +5,7 @@ const massive = require('massive')
 const cors = require('cors')
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env
 const app = express()
-const stripe = require('stripe')('stripe_key')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 const bodyParser = require('body-parser')
 
 const auth_ctrl = require('./controllers/auth_controller')
@@ -77,7 +77,7 @@ app.post('/api/payment', function(req, res, next){
     amount: convertedAmt, // amount in cents, again
     currency: 'usd',
     source: req.body.token.id,
-    description: 'Test charge from react app'
+    description: `${product.description}`
   }, function(err, charge) {
       if (err) return res.sendStatus(500)
       return res.sendStatus(200);
