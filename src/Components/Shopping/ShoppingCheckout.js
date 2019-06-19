@@ -40,7 +40,7 @@ class ShoppingCheckout extends Component {
     axios.post("/api/payment", { token, amount: 1000 }).then(response => {
       console.log(response)
       this.props.history.push("/completed");
-      alert("Purchased!!");
+      alert("Purchased Completed!");
     });
   };
 

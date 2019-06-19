@@ -88,7 +88,6 @@ app.post('/api/payment', function(req, res, next){
   });
 
 
-
 massive(CONNECTION_STRING).then((database) => {
     app.set('db', database)
     console.log('Database is running 👌', database.listTables())
