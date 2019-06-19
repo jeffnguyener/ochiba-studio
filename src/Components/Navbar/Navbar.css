@@ -188,11 +188,17 @@ nav div img {
 
 .mobile-sidebar {
   display: none;
+  
 }
 
 .mobile-sidebar a {
   color: #525252;
   background: #ebebeb;
+}
+
+.mobile-sidebar a:hover {
+  color: lawngreen;
+  background: black;
 }
 
 /* Tablet View*/
@@ -254,6 +260,44 @@ nav div img {
   .mobile-icons {
     width: 35%;
     margin-left: -20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+/* Galaxy 5 View */
+@media only screen and (max-width: 360px) {
+  nav div img {
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+  .nav-links {
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  div .mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 180px;
+    margin-top: 158px;
+    justify-content: flex-end;
+    z-index: 1;
+    position: absolute;
+    background: #ebebeb;
+  }
+
+  .mobile-icons {
+    width: 40%;
+    margin-left: -30px;
     position: relative;
     display: flex;
     align-items: center;
