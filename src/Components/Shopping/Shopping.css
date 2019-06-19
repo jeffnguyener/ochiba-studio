@@ -52,3 +52,14 @@ form {
   font-size: 12px;
   color: gray;
 }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu a {
+  color: #525252;
+  font-size: 14px;
+}
