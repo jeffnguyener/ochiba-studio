@@ -77,7 +77,7 @@ app.post('/api/payment', function(req, res, next){
     amount: convertedAmt, // amount in cents, again
     currency: 'usd',
     source: req.body.token.id,
-    description: `${product.description}`
+    description: `succussefulpayment`
   }, function(err, charge) {
       if (err) return res.sendStatus(500)
       return res.sendStatus(200);

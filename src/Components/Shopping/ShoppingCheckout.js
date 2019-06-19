@@ -36,9 +36,9 @@ class ShoppingCheckout extends Component {
   onToken = token => {
     token.card = void 0;
     console.log("token", token)
-    console.log(this.props)
-    ;
+    console.log(this.state);
     axios.post("/api/payment", { token, amount: 1000 }).then(response => {
+      console.log(response)
       this.props.history.push("/completed");
       alert("Purchased!!");
     });
@@ -70,7 +70,7 @@ class ShoppingCheckout extends Component {
     return (
       <div className="shopping-cart-form">
         {items}
-        <div className="product-cart">${this.props.cart}</div>
+        <div className="product-cart">${this.cart}</div>
         <StripeCheckout
           name="Ochiba Studio"
           description="We will contact you within 24 hours."
