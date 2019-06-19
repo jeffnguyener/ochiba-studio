@@ -19,6 +19,7 @@ import UserGallery from './Components/UserProfile/UserGallery'
 //SHOPPING ROUTES
 import Cart from '../src/Components/Shopping/Shopping'
 import Checkout from './Components/Shopping/ShoppingCheckout'
+import ShopCompleted from './Components/Shopping/ShopCompleted'
 
 //PORTFOLIO ROUTES
 import Wedding from './Components/Portfolio/Wedding'
@@ -43,6 +44,7 @@ export default (
 
         <Route path='/cart' component={Cart} />
         <Route path='/checkout' component={Checkout} />
+        <Route path='/completed' component={ShopCompleted} />
 
         <Route path='/wedding' component={Wedding} />
         <Route path='/engagement' component={Engagement} />

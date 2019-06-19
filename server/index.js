@@ -69,7 +69,7 @@ app.post('/api/payment', function(req, res, next){
           break;
       } else {
           pennies.push(amountArray[i])
-      }
+      } 
     }
     const convertedAmt = parseInt(pennies.join(''));
   

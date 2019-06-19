@@ -27,7 +27,6 @@ const Button = styled.button`
   }
 `;
 
-
 class ShoppingCheckout extends Component {
   state = {
     products: [],
@@ -36,20 +35,20 @@ class ShoppingCheckout extends Component {
 
   onToken = token => {
     token.card = void 0;
-    console.log("token", token);
-    axios
-      .post("/api/payment", { token, amount: 1000 })
-      .then(response => {
-        alert("Purchased!");
-      });
+    console.log("token", token)
+    console.log(this.props)
+    ;
+    axios.post("/api/payment", { token, amount: 1000 }).then(response => {
+      this.props.history.push("/completed");
+      alert("Purchased!!");
+    });
   };
-  
+
   componentDidMount() {
     axios
       .get("/shopping/products")
       .then(res => this.setState({ cart: res.data }));
   }
-
 
   render() {
     const items = this.props.cart.map(product => {
@@ -71,7 +70,7 @@ class ShoppingCheckout extends Component {
     return (
       <div className="shopping-cart-form">
         {items}
-        <div className="product-cart">${this.props.getTotal}</div>
+        <div className="product-cart">${this.props.cart}</div>
         <StripeCheckout
           name="Ochiba Studio"
           description="We will contact you within 24 hours."
@@ -79,7 +78,7 @@ class ShoppingCheckout extends Component {
           label="Purchase!"
           stripeKey="pk_test_vlelgF6jTCOZAOS87krO88Db00M4h8kal7"
           token={this.onToken}
-          amount={1000}
+          amount={150000}
         />
       </div>
     );
