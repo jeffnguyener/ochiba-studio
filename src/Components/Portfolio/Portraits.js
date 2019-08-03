@@ -20,7 +20,7 @@ import port12 from './Portraits/portrait12.jpg'
 
 const portrait_img = [ port1, port2, port3, port11, port4, port5, port6, port7, port8, port9, port10, port12 ];
 
-//AWS NOT LOADING PROPERLY 
+//AWS NOT LOADING PROPERLY, USING LOCAL STORAGE
 
 // const portrait_set = [
 //   "https://os-personal-project.s3-us-west-1.amazonaws.com/Portraits/DSC_3201.jpg",
