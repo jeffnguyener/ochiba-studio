@@ -18,6 +18,8 @@ import wed12 from './Wedding/wedding.jpg'
 
 const wedding_set = [ wed1, wed2, wed3, wed4, wed5, wed6, wed7, wed8, wed9, wed10, wed11, wed12]
 
+//AWS NOT LOADING PROPERLY 
+
 // const wedding_set = [
 //     "https://os-personal-project.s3-us-west-1.amazonaws.com/Wedding/20140928-DSC_7134.jpg",
 //     "https://os-personal-project.s3-us-west-1.amazonaws.com/Wedding/20140928-DSC_7183.jpg",

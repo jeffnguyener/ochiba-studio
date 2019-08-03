@@ -16,6 +16,8 @@ import mat9 from './Maternity/maternity9.jpg'
 const maternity_img = [ mat1, mat2, mat3, mat4, mat5, mat6, mat7, mat8, mat9
 ];
 
+//AWS NOT LOADING PROPERLY 
+
 // const maternity_set = [
 //     "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/20160526-DSC_0717.jpg",
 //     "https://os-personal-project.s3-us-west-1.amazonaws.com/Maternity/20160526-DSC_0722.jpg",
