@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import parisImg from "../Navbar/images/paris.jpg";
 import skydiveUt from '../Navbar/images/skydive_ut.jpg'
+import arches from '../Navbar/images/arches.jpg'
 
 import "./Blog.css";
 
@@ -16,6 +17,13 @@ const Image = styled.img`
 const Blog = () => (
   <div className="blog-form">
     <h1>Blog</h1>
+    <div className="zoomIn">
+      <Image id="arches-img" alt="arches" src={arches} />
+      </div>
+      <br />
+    <span className="blog-post"><h1>July 2019</h1>We decided to explore more of the great state of Utah so we drove from Eagle Mountain, UT to Arches National Park. The trails here are much easier compared to Zion National Park and the views are just as beautiful.  
+    </span>
+    <br />
     <div className="zoomIn">
       <Image id="paris-img" alt="paris" src={parisImg} />
       </div>
